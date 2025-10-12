@@ -10,7 +10,9 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^5.14.4"
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.4",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "prettier": "3.6.2",
