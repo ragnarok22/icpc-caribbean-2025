@@ -10,6 +10,9 @@ importers:
       "@astrojs/react":
         specifier: ^4.4.0
         version: 4.4.0(@types/node@24.7.2)(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      "@number-flow/react":
+        specifier: ^0.5.10
+        version: 0.5.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       "@tailwindcss/vite":
         specifier: ^4.1.14
         version: 4.1.14(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1))
@@ -22,9 +25,6 @@ importers:
       astro:
         specifier: ^5.14.4
         version: 5.14.4(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)
-      number-flow:
-        specifier: ^0.5.8
-        version: 0.5.8
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -709,6 +709,15 @@ packages:
       {
         integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==,
       }
+
+  "@number-flow/react@0.5.10":
+    resolution:
+      {
+        integrity: sha512-a8Wh5eNITn7Km4xbddAH7QH8eNmnduR6k34ER1hkHSGO4H2yU1DDnuAWLQM99vciGInFODemSc0tdxrXkJEpbA==,
+      }
+    peerDependencies:
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
 
   "@oslojs/encoding@1.1.0":
     resolution:
@@ -3639,6 +3648,13 @@ snapshots:
     dependencies:
       "@jridgewell/resolve-uri": 3.1.2
       "@jridgewell/sourcemap-codec": 1.5.5
+
+  "@number-flow/react@0.5.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)":
+    dependencies:
+      esm-env: 1.2.2
+      number-flow: 0.5.8
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   "@oslojs/encoding@1.1.0": {}
 
