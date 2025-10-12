@@ -1,1 +1,19 @@
-<main>hero</main>
+---
+import { EVENT_DATE } from "@/lib/info";
+---
+
+<main
+  class="absolute top-1/2 right-1/2 flex translate-x-1/2 -translate-y-1/2 flex-col gap-2 text-center"
+>
+  <date class="mb-4 text-2xl"
+    >{
+      EVENT_DATE.toLocaleDateString("es-ES", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }</date
+  >
+  <h1 class="text-9xl">ICPC Caribbean 2025</h1>
+  <p class="text-2xl">El evento más grande de programación de la región</p>
+</main>

@@ -1,1 +1,39 @@
-<header>header</header>
+<header class="mx-auto flex max-w-2xl justify-between py-4">
+  <nav class="">
+    <a href="#teams">Equipos</a>
+  </nav>
+  <nav>
+    <a href="#sponsors">Patrocinadores</a>
+  </nav>
+</header>
+
+<style>
+  header nav {
+    --size: 4px;
+    position: relative;
+  }
+  header nav::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    background-color: #b12a1c;
+    height: var(--size);
+    width: 0;
+    transition: width 0.2s ease-in-out;
+  }
+  header nav::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: 50%;
+    background-color: #fdba31;
+    height: var(--size);
+    width: 0;
+    transition: width 0.2s ease-in-out;
+  }
+  header nav:hover::after,
+  header nav:hover::before {
+    width: 50%;
+  }
+</style>

@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+h1,
+h2 {
+  font-family: Twkeverett, Arial, sans-serif;
+}
