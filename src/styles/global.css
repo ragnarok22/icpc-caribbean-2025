@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blue: #4a82c3;
+  --color-yellow: #fdba31;
+  --color-red: #b12a1c;
+}
+
 h1,
 h2 {
   font-family: Twkeverett, Arial, sans-serif;

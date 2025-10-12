@@ -16,12 +16,13 @@ import bgImage from "@/assets/city-background.jpg";
   <div class="relative h-screen text-white">
     <Header />
     <Hero />
-    <div class="absolute inset-0 -z-10 h-full w-full bg-[#153A66]">
+    <div class="bg-blue absolute inset-0 -z-10 h-full w-full">
       <Image
         src={bgImage}
         alt="City Background"
         class="h-full w-full object-cover object-center opacity-20"
       />
+      <div class="gradient"></div>
     </div>
   </div>
 
@@ -31,3 +32,13 @@ import bgImage from "@/assets/city-background.jpg";
   <Sponsors />
   <Footer />
 </Layout>
+
+<style>
+  .gradient {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, #4a82c3 0%, transparent 100%);
+  }
+</style>
