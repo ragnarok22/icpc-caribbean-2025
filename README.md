@@ -92,4 +92,4 @@ Preview the production build locally before deploying.
 
 ## 📄 License
 
-MIT
+GPL-3.0 License
