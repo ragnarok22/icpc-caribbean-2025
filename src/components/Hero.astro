@@ -5,14 +5,16 @@ import { EVENT_DATE } from "@/lib/info";
 <main
   class="absolute top-1/2 right-1/2 flex translate-x-1/2 -translate-y-1/2 flex-col gap-2 px-4 text-center"
 >
-  <date class="mb-4 text-lg sm:text-xl md:text-2xl"
+  <time
+    datetime={EVENT_DATE.toISOString().split("T")[0]}
+    class="mb-4 text-lg sm:text-xl md:text-2xl"
     >{
       EVENT_DATE.toLocaleDateString("es-ES", {
         year: "numeric",
         month: "long",
         day: "numeric",
       })
-    }</date
+    }</time
   >
   <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
     ICPC Caribbean 2025

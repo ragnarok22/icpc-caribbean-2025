@@ -1,15 +1,94 @@
 ---
 import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const {
+  title = "ICPC Final Caribeña 2025 - Universidad de Holguín",
+  description = "Final Regional del Caribe del ICPC 2025 organizada por la Universidad de Holguín, Cuba. Competencia internacional de programación competitiva.",
+  image = "/og-image.jpg",
+  canonical = Astro.url.pathname,
+} = Astro.props;
+
+const siteUrl = Astro.site || "https://icpc-caribbean-2025.vercel.app";
+const canonicalURL = new URL(canonical, siteUrl).href;
+const imageURL = new URL(image, siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>ICPC Final Caribeña 2025 - Universidad de Holguín</title>
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="ICPC Final Caribeña 2025" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageURL} />
+
+    <!-- Additional SEO -->
+    <meta
+      name="keywords"
+      content="ICPC, programación competitiva, Caribbean Finals, Universidad de Holguín, Cuba, competitive programming, algoritmos, ACM ICPC"
+    />
+    <meta name="author" content="Universidad de Holguín" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+
+    <!-- Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        name: "ICPC Final Caribeña 2025",
+        description: description,
+        startDate: "2025-10-25",
+        endDate: "2025-10-26",
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        location: {
+          "@type": "Place",
+          name: "Universidad de Holguín",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Holguín",
+            addressCountry: "CU",
+          },
+        },
+        organizer: {
+          "@type": "Organization",
+          name: "Universidad de Holguín",
+          url: "https://uho.edu.cu",
+        },
+        image: imageURL,
+        url: canonicalURL,
+      })}
+    />
   </head>
   <body class="min-h-screen">
     <slot />
