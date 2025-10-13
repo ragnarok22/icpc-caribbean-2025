@@ -31,9 +31,9 @@ import { SCHEDULE } from "@/lib/info";
               >
                 {/* Content card - full width on mobile, half on desktop */}
                 <div
-                  class={`w-full pl-0 md:w-5/12 md:pl-0 timeline-card ${isLeft ? "md:pr-0 md:text-right md:-mr-16" : "md:pl-0 md:text-left md:-ml-16"}`}
+                  class={`w-full pl-6 md:w-5/12 md:pl-0 ${isLeft ? "md:pr-0 md:text-right" : "md:pl-0 md:text-left"}`}
                 >
-                  <div class="rounded-lg bg-white p-4 shadow-lg sm:p-6">
+                  <div class={`rounded-lg bg-white p-4 shadow-lg sm:p-6 ${isLeft ? "md:-mr-6" : "md:-ml-6"}`}>
                     <time
                       datetime={item.date}
                       class="text-blue mb-2 block text-lg font-bold sm:text-xl"
@@ -48,7 +48,7 @@ import { SCHEDULE } from "@/lib/info";
 
                 {/* Calendar icon - left on mobile, positioned relative to center on desktop */}
                 <div
-                  class={`absolute left-1 z-10 md:left-auto md:hidden ${isLeft ? "md:left-[calc(41.666%-1rem)]" : "md:left-[calc(58.333%-1rem)]"}`}
+                  class="absolute left-1 z-10 md:hidden"
                 >
                   <div class="bg-blue flex h-6 w-6 items-center justify-center rounded-full shadow-md sm:h-8 sm:w-8">
                     <svg

@@ -10,24 +10,3 @@ h1,
 h2 {
   font-family: Twkeverett, Arial, sans-serif;
 }
-
-.timeline-card {
-  padding-left: 1.5rem; /* Add left padding on mobile to prevent overlap with vertical line */
-}
-
-.timeline-card > .rounded-lg.bg-white.p-4.shadow-lg.sm\:p-6 {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-@media (min-width: 768px) {
-  .timeline-card {
-    padding-left: 0;
-  }
-  .timeline-card > .rounded-lg.bg-white.p-4.shadow-lg.sm\:p-6 {
-    margin-right: -24px;
-    margin-left: -24px;
-    width: calc(100% + 48px); /* Reduced card length only on desktop */
-  }
-}
