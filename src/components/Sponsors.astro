@@ -9,16 +9,14 @@ import { SPONSORS } from "../lib/info";
       Gracias a nuestros patrocinadores por hacer posible este evento
     </p>
 
-    <div
-      class="mt-12 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-    >
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-8">
       {
         SPONSORS.map((sponsor) => (
           <a
             href={sponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="group hover:border-blue flex h-32 w-full items-center justify-center rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
+            class="group hover:border-blue flex h-32 w-32 items-center justify-center rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
           >
             <img
               src={sponsor.logo}
