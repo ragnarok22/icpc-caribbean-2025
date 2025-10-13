@@ -3,9 +3,9 @@ import { EVENT_DATE } from "@/lib/info";
 ---
 
 <main
-  class="absolute top-1/2 right-1/2 flex translate-x-1/2 -translate-y-1/2 flex-col gap-2 text-center"
+  class="absolute top-1/2 right-1/2 flex translate-x-1/2 -translate-y-1/2 flex-col gap-2 px-4 text-center"
 >
-  <date class="mb-4 text-2xl"
+  <date class="mb-4 text-lg sm:text-xl md:text-2xl"
     >{
       EVENT_DATE.toLocaleDateString("es-ES", {
         year: "numeric",
@@ -14,6 +14,10 @@ import { EVENT_DATE } from "@/lib/info";
       })
     }</date
   >
-  <h1 class="text-9xl">ICPC Caribbean 2025</h1>
-  <p class="text-2xl">El evento más grande de programación de la región</p>
+  <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+    ICPC Caribbean 2025
+  </h1>
+  <p class="text-base sm:text-lg md:text-xl lg:text-2xl">
+    El evento más grande de programación de la región
+  </p>
 </main>
