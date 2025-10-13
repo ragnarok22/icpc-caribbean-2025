@@ -9,11 +9,7 @@ export default function TeamCard({ team }: TeamCardProps) {
   return (
     <article className="team-card">
       <div className="team-header">
-        <img
-          src={team.picture}
-          alt={`${team.teamName} team photo`}
-          className="team-picture"
-        />
+        <img src={team.picture} alt={team.teamName} className="team-picture" />
         <div className="team-info">
           <h3 className="team-name">{team.teamName}</h3>
           <div className="university">
