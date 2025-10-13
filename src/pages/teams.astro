@@ -1,8 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import TeamList from "@/components/teams/TeamList.astro";
+import TeamListWithFilter from "@/components/teams/TeamListWithFilter";
+import { TEAMS } from "@/lib/info";
+import "@/styles/teams.css";
 ---
 
 <Layout>
-  <TeamList />
+  <TeamListWithFilter client:load teams={TEAMS} />
 </Layout>

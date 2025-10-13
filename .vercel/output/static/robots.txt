@@ -1,0 +1,5 @@
+# robots.txt for ICPC Caribbean 2025
+User-agent: *
+Allow: /
+
+Sitemap: https://icpc-caribbean-2025.vercel.app/sitemap-index.xml
