@@ -33,7 +33,9 @@ import { SCHEDULE } from "@/lib/info";
                 <div
                   class={`w-full pl-6 md:w-5/12 md:pl-0 ${isLeft ? "md:pr-0 md:text-right" : "md:pl-0 md:text-left"}`}
                 >
-                  <div class={`rounded-lg bg-white p-4 shadow-lg sm:p-6 ${isLeft ? "md:-mr-6" : "md:-ml-6"}`}>
+                  <div
+                    class={`rounded-lg bg-white p-4 shadow-lg sm:p-6 ${isLeft ? "md:-mr-6" : "md:-ml-6"}`}
+                  >
                     <time
                       datetime={item.date}
                       class="text-blue mb-2 block text-lg font-bold sm:text-xl"
@@ -47,9 +49,7 @@ import { SCHEDULE } from "@/lib/info";
                 </div>
 
                 {/* Calendar icon - left on mobile, positioned relative to center on desktop */}
-                <div
-                  class="absolute left-1 z-10 md:hidden"
-                >
+                <div class="absolute left-1 z-10 md:hidden">
                   <div class="bg-blue flex h-6 w-6 items-center justify-center rounded-full shadow-md sm:h-8 sm:w-8">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
