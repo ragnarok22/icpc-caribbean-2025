@@ -1,1 +1,56 @@
-<section>timeline</section>
+---
+import { SCHEDULE } from "@/lib/info";
+---
+
+<section class="bg-gray-50 py-16">
+  <div class="mx-auto max-w-4xl px-4">
+    <h2 class="text-blue mb-12 text-center text-4xl">Cronograma</h2>
+
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="bg-blue absolute top-0 left-1/2 h-full w-1 -translate-x-1/2">
+      </div>
+
+      <!-- Timeline items -->
+      <div class="space-y-12">
+        {
+          SCHEDULE.map((item, index) => {
+            const isLeft = index % 2 === 0;
+            const date = new Date(item.date);
+            const formattedDate = date.toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+            return (
+              <div
+                class={`relative flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+              >
+                {/* Content card */}
+                <div
+                  class={`w-5/12 ${isLeft ? "pr-8 text-right" : "pl-8 text-left"}`}
+                >
+                  <div class="rounded-lg bg-white p-6 shadow-lg">
+                    <h3 class="text-blue mb-2 text-xl font-bold">
+                      {formattedDate}
+                    </h3>
+                    <p class="text-gray-700">{item.description}</p>
+                  </div>
+                </div>
+
+                {/* Center dot */}
+                <div class="absolute left-1/2 -translate-x-1/2">
+                  <div class="bg-yellow h-4 w-4 rounded-full border-4 border-white shadow-md" />
+                </div>
+
+                {/* Empty space on the other side */}
+                <div class="w-5/12" />
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
