@@ -6,6 +6,10 @@
   --color-red: #b12a1c;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2 {
   font-family: Twkeverett, Arial, sans-serif;
