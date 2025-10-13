@@ -1,4 +1,9 @@
-import type { Social, Sponsor } from "./definitions";
+import {
+  ParticipantType,
+  type Social,
+  type Sponsor,
+  type Team,
+} from "./definitions";
 
 export const EVENT_DATE = new Date("2025-11-08T14:00:00");
 
@@ -39,5 +44,26 @@ export const SPONSORS: Sponsor[] = [
     name: "Sponsor 2",
     url: "https://sponsor2.com",
     logo: "https://sponsor2.com/logo.png",
+  },
+];
+
+export const TEAMS: Team[] = [
+  {
+    teamName: "Team 1",
+    picture: "https://team1.com/picture.png",
+    participants: [
+      {
+        name: "Participant 1",
+        type: ParticipantType.MEMBER,
+      },
+      {
+        name: "Participant 2",
+        type: ParticipantType.MEMBER,
+      },
+    ],
+    university: {
+      name: "University 1",
+      logo: "https://university1.com/logo.png",
+    },
   },
 ];
