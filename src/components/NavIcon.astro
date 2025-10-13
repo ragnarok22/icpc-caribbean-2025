@@ -1,0 +1,37 @@
+<label class="relative w-10 h-7.5 bg-transparent cursor-pointer block md:hidden" for="burger">
+    <input type="checkbox" id="burger" class="hidden">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </label>
+  
+  <style>
+    @reference "tailwindcss";
+    .hamburger-line {
+      @apply absolute h-1 block w-full bg-black rounded-lg opacity-100 left-0 transition-all duration-300 ease-in-out origin-left;
+    }
+    
+    .hamburger-line:nth-of-type(1) {
+      @apply top-0 rotate-0;
+    }
+    
+    .hamburger-line:nth-of-type(2) {
+      @apply top-1/2 -translate-y-1/2;
+    }
+    
+    .hamburger-line:nth-of-type(3) {
+      @apply top-full -translate-y-full;
+    }
+    
+    #burger:checked ~ .hamburger-line:nth-of-type(1) {
+      @apply rotate-45 top-0 left-1;
+    }
+    
+    #burger:checked ~ .hamburger-line:nth-of-type(2) {
+      @apply w-0 opacity-0;
+    }
+    
+    #burger:checked ~ .hamburger-line:nth-of-type(3) {
+      @apply -rotate-45 top-7 left-1;
+    }
+  </style>

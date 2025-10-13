@@ -1,8 +1,17 @@
-<header class="mx-auto flex max-w-2xl justify-between px-4 py-4 sm:px-6">
-  <nav class="text-sm sm:text-base">
+---
+import NavIcon from "@/components/NavIcon.astro";
+import IcpcLogo from "@/assets/ICPC_logo.svg";
+---
+
+<header class="mx-auto flex max-w-2xl justify-between items-center px-4 py-4 sm:px-6">
+
+  <NavIcon />
+  <img src={IcpcLogo.src} alt="ICPC Logo" class="w-20 h-20" />
+
+  <nav class="hidden md:block text-sm sm:text-base">
     <a href="#teams">Equipos</a>
   </nav>
-  <nav class="text-sm sm:text-base">
+  <nav class="hidden md:block text-sm sm:text-base">
     <a href="#sponsors">Patrocinadores</a>
   </nav>
 </header>
