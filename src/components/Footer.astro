@@ -1,1 +1,12 @@
-<footer>footer</footer>
+---
+import { Image } from "astro:assets";
+import bgImage from "@/assets/havana-footer.png";
+---
+
+<footer>
+  <Image
+    src={bgImage}
+    alt="City Background"
+    class="h-full w-full object-cover object-center"
+  />
+</footer>
