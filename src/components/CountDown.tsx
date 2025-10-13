@@ -1,58 +1,75 @@
+import { EVENT_DATE } from "@/lib/info";
 import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
-import { useActionState, useEffect, useTransition } from "react";
+import { useEffect, useState } from "react";
 
 export const CountDown = () => {
-  async function decrement(previousState: number, formData: FormData) {
-    return previousState - 1;
-  }
-  const [_, startTransition] = useTransition();
-  const [seconds, setSeconds] = useActionState(decrement, 1000);
-  const hh = Math.floor(seconds / 3600);
-  const mm = Math.floor((seconds % 3600) / 60);
-  const ss = seconds % 60;
+  const calculateTimeLeft = () => {
+    const now = Date.now();
+    const difference = EVENT_DATE.getTime() - now;
+    return Math.max(0, Math.floor(difference / 1000));
+  };
+
+  const [seconds, setSeconds] = useState(calculateTimeLeft);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout | undefined = undefined;
-    if (seconds !== 0) {
-      timer = setInterval(() => {
-        startTransition(() => setSeconds((seconds: number) => seconds - 1));
-      }, 1000);
-    } else if (timer) {
-      clearTimeout(timer);
-    }
+    if (seconds <= 0) return;
+
+    const timer = setInterval(() => {
+      setSeconds((prevSeconds) => {
+        const newSeconds = prevSeconds - 1;
+        return newSeconds < 0 ? 0 : newSeconds;
+      });
+    }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [seconds]);
+
+  const days = Math.floor(seconds / 86400);
+  const hours = Math.floor((seconds % 86400) / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+
+  if (seconds === 0) {
+    return (
+      <div className="text-center text-4xl font-bold md:text-6xl">
+        <p className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Event Started!
+        </p>
+      </div>
+    );
+  }
 
   return (
     <NumberFlowGroup>
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        <TimeUnit value={days} label="Days" />
+        <TimeUnit value={hours} label="Hours" />
+        <TimeUnit value={minutes} label="Minutes" />
+        <TimeUnit value={secs} label="Seconds" />
+      </div>
+    </NumberFlowGroup>
+  );
+};
+
+const TimeUnit = ({ value, label }: { value: number; label: string }) => {
+  return (
+    <div className="flex flex-col items-center">
       <div
         style={{
           fontVariantNumeric: "tabular-nums",
           "--number-flow-char-height": "0.85em",
         }}
-        className="~text-3xl/4xl flex items-baseline font-semibold"
+        className="font-mono text-5xl font-bold md:text-7xl"
       >
         <NumberFlow
           trend={-1}
-          value={hh}
-          format={{ minimumIntegerDigits: 2 }}
-        />
-        <NumberFlow
-          prefix=":"
-          trend={-1}
-          value={mm}
-          digits={{ 1: { max: 5 } }}
-          format={{ minimumIntegerDigits: 2 }}
-        />
-        <NumberFlow
-          prefix=":"
-          trend={-1}
-          value={ss}
-          digits={{ 1: { max: 5 } }}
+          value={value}
           format={{ minimumIntegerDigits: 2 }}
         />
       </div>
-    </NumberFlowGroup>
+      <span className="mt-2 text-sm font-medium tracking-wide text-gray-600 uppercase md:text-base dark:text-gray-400">
+        {label}
+      </span>
+    </div>
   );
 };
