@@ -1,7 +1,155 @@
 ---
+import type { Team } from "@/lib/definitions";
+import { ParticipantType } from "@/lib/definitions";
+
+interface Props {
+  team: Team;
+}
+
 const { team } = Astro.props;
 ---
 
-<div>
-  {team.teamName}
-</div>
+<article class="team-card">
+  <div class="team-header">
+    <img
+      src={team.picture}
+      alt={`${team.teamName} team photo`}
+      class="team-picture"
+    />
+    <div class="team-info">
+      <h3 class="team-name">{team.teamName}</h3>
+      <div class="university">
+        <img
+          src={team.university.logo}
+          alt={`${team.university.name} logo`}
+          class="university-logo"
+        />
+        <span class="university-name">{team.university.name}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="participants">
+    <h4>Participants</h4>
+    <ul class="participants-list">
+      {
+        team.participants.map((participant) => (
+          <li class="participant">
+            <span class="participant-name">{participant.name}</span>
+            <span class={`participant-type ${participant.type.toLowerCase()}`}>
+              {participant.type === ParticipantType.COACH ? "Coach" : "Member"}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</article>
+
+<style>
+  .team-card {
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background: var(--color-bg-card, white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+  }
+
+  .team-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-picture {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .team-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-text-primary, #1a202c);
+  }
+
+  .university {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .university-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .university-name {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary, #718096);
+  }
+
+  .participants h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary, #1a202c);
+  }
+
+  .participants-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .participant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--color-bg-secondary, #f7fafc);
+    border-radius: 0.25rem;
+  }
+
+  .participant-name {
+    font-weight: 500;
+    color: var(--color-text-primary, #2d3748);
+  }
+
+  .participant-type {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .participant-type.member {
+    background: var(--color-member-bg, #bee3f8);
+    color: var(--color-member-text, #2c5282);
+  }
+
+  .participant-type.coach {
+    background: var(--color-coach-bg, #faf089);
+    color: var(--color-coach-text, #744210);
+  }
+</style>

@@ -1,10 +1,61 @@
 ---
 import { TEAMS } from "@/lib/info";
 import Team from "./Team.astro";
-
-const team = TEAMS[0];
 ---
 
-<main>
-  <Team team={team} />
-</main>
+<section class="team-list">
+  <div class="team-list-header">
+    <h2>Participating Teams</h2>
+    <p class="team-count">
+      {TEAMS.length}
+      {TEAMS.length === 1 ? "team" : "teams"}
+    </p>
+  </div>
+
+  <div class="teams-grid">
+    {TEAMS.map((team) => <Team team={team} />)}
+  </div>
+</section>
+
+<style>
+  .team-list {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team-list-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .team-list-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary, #1a202c);
+  }
+
+  .team-count {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text-secondary, #718096);
+  }
+
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .team-list {
+      padding: 1rem;
+    }
+
+    .teams-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
