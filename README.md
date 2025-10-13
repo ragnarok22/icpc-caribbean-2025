@@ -1,6 +1,6 @@
 # ICPC Caribbean 2025
 
-[![CI](https://github.com/ragnarok/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok/icpc-caribbean-2025/actions/workflows/ci.yml)
+[![CI](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml)
 
 Website for the ICPC Caribbean Finals 2025 event.
 
