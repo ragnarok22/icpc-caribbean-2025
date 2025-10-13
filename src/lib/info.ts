@@ -1,4 +1,4 @@
-import type { Social } from "./definitions";
+import type { Social, Sponsor } from "./definitions";
 
 export const EVENT_DATE = new Date("2025-11-08T14:00:00");
 
@@ -26,5 +26,18 @@ export const SOCIALS: Social[] = [
   {
     type: "telegram",
     url: "https://t.me/ICPC_Caribbean",
+  },
+];
+
+export const SPONSORS: Sponsor[] = [
+  {
+    name: "Sponsor 1",
+    url: "https://sponsor1.com",
+    logo: "https://sponsor1.com/logo.png",
+  },
+  {
+    name: "Sponsor 2",
+    url: "https://sponsor2.com",
+    logo: "https://sponsor2.com/logo.png",
   },
 ];
