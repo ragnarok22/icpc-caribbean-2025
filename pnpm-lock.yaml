@@ -14,14 +14,14 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0
       "@astrojs/vercel":
-        specifier: ^8.2.9
-        version: 8.2.9(astro@5.14.4(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(react@19.2.0)(rollup@4.52.4)
+        specifier: ^8.2.10
+        version: 8.2.10(astro@5.14.5(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(react@19.2.0)(rollup@4.52.4)
       "@number-flow/react":
         specifier: ^0.5.10
         version: 0.5.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       "@tailwindcss/vite":
         specifier: ^4.1.14
-        version: 4.1.14(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
+        version: 4.1.14(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
       "@types/react":
         specifier: ^19.2.2
         version: 19.2.2
@@ -29,8 +29,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2(@types/react@19.2.2)
       astro:
-        specifier: ^5.14.4
-        version: 5.14.4(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
+        specifier: ^5.14.5
+        version: 5.14.5(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -75,8 +75,8 @@ importers:
         specifier: 0.14.1
         version: 0.14.1
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.14
-        version: 0.6.14(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
+        specifier: ^0.7.0
+        version: 0.7.0(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -159,10 +159,10 @@ packages:
       }
     engines: { node: 18.20.8 || ^20.3.0 || >=22.0.0 }
 
-  "@astrojs/vercel@8.2.9":
+  "@astrojs/vercel@8.2.10":
     resolution:
       {
-        integrity: sha512-YJ7HTuONufnXFvZsN/USfwkh64b68JO9ZeeuABY90RvsyuKLVvW8Y5pi0qwgwmOf0UtdJAo9BO9cY4cmptkvSQ==,
+        integrity: sha512-pq1CHZF9acBATD+MagFX8XzpVUARFvuGr36pukVbYZqvrc9Wt7IY3mJdQaZoL3SccMSV5K1S6/ELGWV5wYsj8g==,
       }
     peerDependencies:
       astro: ^5.0.0
@@ -1616,10 +1616,10 @@ packages:
       "@aws-sdk/credential-provider-web-identity":
         optional: true
 
-  "@vercel/nft@0.30.2":
+  "@vercel/nft@0.30.1":
     resolution:
       {
-        integrity: sha512-pquXF3XZFg/T3TBor08rUhIGgOhdSilbn7WQLVP/aVSSO+25Rs4H/m3nxNDQ2x3znX7Z3yYjryN8xaLwypcwQg==,
+        integrity: sha512-2mgJZv4AYBFkD/nJ4QmiX5Ymxi+AisPLPcS/KPXVqniyQNqKXX+wjieAbDXQP3HcogfEbpHoRMs49Cd4pfkk8g==,
       }
     engines: { node: ">=18" }
     hasBin: true
@@ -1874,10 +1874,10 @@ packages:
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
-  astro@5.14.4:
+  astro@5.14.5:
     resolution:
       {
-        integrity: sha512-yqgMAO2Whi9GmZkByyiPcG7CiiPr0Me0iBSorMa6M0g+wQk/ewnIqUyr7T/uFCPTQndoKwucnYFTrf0yfb0urw==,
+        integrity: sha512-EHt7y3+nHYyKzBats1AL3N4Pyrvqyr+zXBC7njUa9Tfe+gsiHlunaw+lXitTT/DDVwO2R/f/qVG7Xc6rl0b2KQ==,
       }
     engines:
       { node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: ">=9.6.5", pnpm: ">=7.1.0" }
@@ -4307,12 +4307,12 @@ packages:
       }
     engines: { node: ^14.15.0 || >=16.0.0 }
 
-  prettier-plugin-tailwindcss@0.6.14:
+  prettier-plugin-tailwindcss@0.7.0:
     resolution:
       {
-        integrity: sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==,
+        integrity: sha512-zpRZhkfwq1cNmbKhmKzXKuKFdkgXZXlf6p+KttD75v6pGz1FxmcKMc4RKdw97GYBKBbout4113HSLaBJAomFDw==,
       }
-    engines: { node: ">=14.21.3" }
+    engines: { node: ">=20.19" }
     peerDependencies:
       "@ianvs/prettier-plugin-sort-imports": "*"
       "@prettier/plugin-hermes": "*"
@@ -4324,14 +4324,12 @@ packages:
       prettier: ^3.0
       prettier-plugin-astro: "*"
       prettier-plugin-css-order: "*"
-      prettier-plugin-import-sort: "*"
       prettier-plugin-jsdoc: "*"
       prettier-plugin-marko: "*"
       prettier-plugin-multiline-arrays: "*"
       prettier-plugin-organize-attributes: "*"
       prettier-plugin-organize-imports: "*"
       prettier-plugin-sort-imports: "*"
-      prettier-plugin-style-order: "*"
       prettier-plugin-svelte: "*"
     peerDependenciesMeta:
       "@ianvs/prettier-plugin-sort-imports":
@@ -4352,8 +4350,6 @@ packages:
         optional: true
       prettier-plugin-css-order:
         optional: true
-      prettier-plugin-import-sort:
-        optional: true
       prettier-plugin-jsdoc:
         optional: true
       prettier-plugin-marko:
@@ -4365,8 +4361,6 @@ packages:
       prettier-plugin-organize-imports:
         optional: true
       prettier-plugin-sort-imports:
-        optional: true
-      prettier-plugin-style-order:
         optional: true
       prettier-plugin-svelte:
         optional: true
@@ -5341,10 +5335,10 @@ packages:
         integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==,
       }
 
-  vite@6.3.6:
+  vite@6.3.7:
     resolution:
       {
-        integrity: sha512-0msEVHJEScQbhkbVTb/4iHZdJ6SXp/AvxL2sjwYQFfBqleHtnCqv1J3sa9zbWz/6kW1m9Tfzn92vW+kZ1WV6QA==,
+        integrity: sha512-mQYaKepA0NGMBsz8Xktt3tJUG5ELE2iT7IJ+ssXI6nxVdE2sFc/d/6w/JByqMLvWg8hNKHpPgzjgOkrhpKFnrA==,
       }
     engines: { node: ^18.0.0 || ^20.0.0 || >=22.0.0 }
     hasBin: true
@@ -5870,11 +5864,11 @@ snapshots:
     dependencies:
       "@types/react": 19.2.2
       "@types/react-dom": 19.2.2(@types/react@19.2.2)
-      "@vitejs/plugin-react": 4.7.0(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
+      "@vitejs/plugin-react": 4.7.0(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       ultrahtml: 1.6.0
-      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
     transitivePeerDependencies:
       - "@types/node"
       - jiti
@@ -5907,14 +5901,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@astrojs/vercel@8.2.9(astro@5.14.4(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(react@19.2.0)(rollup@4.52.4)":
+  "@astrojs/vercel@8.2.10(astro@5.14.5(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1))(react@19.2.0)(rollup@4.52.4)":
     dependencies:
       "@astrojs/internal-helpers": 0.7.4
       "@vercel/analytics": 1.5.0(react@19.2.0)
       "@vercel/functions": 2.2.13
-      "@vercel/nft": 0.30.2(rollup@4.52.4)
+      "@vercel/nft": 0.30.1(rollup@4.52.4)
       "@vercel/routing-utils": 5.2.0
-      astro: 5.14.4(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
+      astro: 5.14.5(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1)
       esbuild: 0.25.10
       tinyglobby: 0.2.15
     transitivePeerDependencies:
@@ -6549,12 +6543,12 @@ snapshots:
       "@tailwindcss/oxide-win32-arm64-msvc": 4.1.14
       "@tailwindcss/oxide-win32-x64-msvc": 4.1.14
 
-  "@tailwindcss/vite@4.1.14(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))":
+  "@tailwindcss/vite@4.1.14(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))":
     dependencies:
       "@tailwindcss/node": 4.1.14
       "@tailwindcss/oxide": 4.1.14
       tailwindcss: 4.1.14
-      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
 
   "@types/babel__core@7.20.5":
     dependencies:
@@ -6726,7 +6720,7 @@ snapshots:
     dependencies:
       "@vercel/oidc": 2.0.2
 
-  "@vercel/nft@0.30.2(rollup@4.52.4)":
+  "@vercel/nft@0.30.1(rollup@4.52.4)":
     dependencies:
       "@mapbox/node-pre-gyp": 2.0.0
       "@rollup/pluginutils": 5.3.0(rollup@4.52.4)
@@ -6757,7 +6751,7 @@ snapshots:
     optionalDependencies:
       ajv: 6.12.6
 
-  "@vitejs/plugin-react@4.7.0(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))":
+  "@vitejs/plugin-react@4.7.0(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))":
     dependencies:
       "@babel/core": 7.28.4
       "@babel/plugin-transform-react-jsx-self": 7.27.1(@babel/core@7.28.4)
@@ -6765,7 +6759,7 @@ snapshots:
       "@rolldown/pluginutils": 1.0.0-beta.27
       "@types/babel__core": 7.20.5
       react-refresh: 0.17.0
-      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -6950,7 +6944,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.14.4(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1):
+  astro@5.14.5(@types/node@24.7.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(typescript@5.9.3)(yaml@2.8.1):
     dependencies:
       "@astrojs/compiler": 2.13.0
       "@astrojs/internal-helpers": 0.7.4
@@ -7006,8 +7000,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.1(@vercel/functions@2.2.13)
       vfile: 6.0.3
-      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
-      vitefu: 1.1.1(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
+      vite: 6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vitefu: 1.1.1(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -8721,7 +8715,7 @@ snapshots:
       prettier: 3.6.2
       sass-formatter: 0.7.9
 
-  prettier-plugin-tailwindcss@0.6.14(prettier-plugin-astro@0.14.1)(prettier@3.6.2):
+  prettier-plugin-tailwindcss@0.7.0(prettier-plugin-astro@0.14.1)(prettier@3.6.2):
     dependencies:
       prettier: 3.6.2
     optionalDependencies:
@@ -9415,7 +9409,7 @@ snapshots:
       "@types/unist": 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1):
+  vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -9430,9 +9424,9 @@ snapshots:
       lightningcss: 1.30.1
       yaml: 2.8.1
 
-  vitefu@1.1.1(vite@6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  vitefu@1.1.1(vite@6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     optionalDependencies:
-      vite: 6.3.6(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 6.3.7(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(yaml@2.8.1)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.23):
     dependencies:
