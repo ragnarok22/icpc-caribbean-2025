@@ -8,7 +8,9 @@ const isHome = currentPath === "/";
 <header
   class=":-space-x-0 relative z-10 mx-auto flex max-w-2xl items-center justify-between -space-x-12 px-8 py-4 sm:px-6"
 >
-  <IcpcLogo class="h-20 w-20" />
+  <a href={isHome ? "#" : "/"}>
+    <IcpcLogo class="h-20 w-20" />
+  </a>
   <nav class="hidden items-center gap-6 text-sm sm:text-base md:flex">
     <a href="/teams">Equipos</a>
     <a href={isHome ? "#sponsors" : "/#sponsors"}>Patrocinadores</a>
