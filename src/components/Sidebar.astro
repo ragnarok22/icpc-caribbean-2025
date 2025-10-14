@@ -1,24 +1,46 @@
-<div id="sidebar" class="fixed top-0 left-0 h-full w-full bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div
+  id="sidebar"
+  class="fixed top-0 left-0 z-50 h-full w-full -translate-x-full transform bg-white shadow-lg transition-transform duration-300 ease-in-out"
+>
   <!-- Botón de cerrar en esquina superior -->
   <div class="absolute top-6 right-6">
-    <button id="close-sidebar" class="text-gray-500 hover:text-gray-700 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <button
+      id="close-sidebar"
+      class="text-gray-500 transition-colors hover:text-gray-700"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-8 w-8"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
-  
+
   <!-- Navigation Links centrados -->
-  <div class="flex justify-center items-center h-full">
+  <div class="flex h-full items-center justify-center">
     <nav class="space-y-8">
-      <a href="#teams" class="block text-center text-4xl font-bold text-gray-800 hover:text-purple-600 transition-colors duration-200 py-4">
+      <a
+        href="#teams"
+        class="block py-4 text-center text-4xl font-bold text-gray-800 transition-colors duration-200 hover:text-purple-600"
+      >
         Equipos
       </a>
-      
-      <a href="#sponsors" class="block text-center text-4xl font-bold text-gray-800 hover:text-purple-600 transition-colors duration-200 py-4">
+
+      <a
+        href="#sponsors"
+        class="block py-4 text-center text-4xl font-bold text-gray-800 transition-colors duration-200 hover:text-purple-600"
+      >
         Patrocinadores
       </a>
-      
+
       <!-- Placeholder para futuras opciones -->
       <!-- <a href="#about" class="block text-center text-4xl font-bold text-gray-800 hover:text-purple-600 transition-colors duration-200 py-4">
         Acerca de

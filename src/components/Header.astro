@@ -5,13 +5,15 @@ const currentPath = Astro.url.pathname;
 const isHome = currentPath === "/";
 ---
 
-<header class="mx-auto flex max-w-2xl justify-between items-center px-8 py-4 sm:px-6 relative z-10 -space-x-12 :-space-x-0">
-  <IcpcLogo class="w-20 h-20"/>
-  <nav class="text-sm sm:text-base hidden md:flex items-center gap-6">
+<header
+  class=":-space-x-0 relative z-10 mx-auto flex max-w-2xl items-center justify-between -space-x-12 px-8 py-4 sm:px-6"
+>
+  <IcpcLogo class="h-20 w-20" />
+  <nav class="hidden items-center gap-6 text-sm sm:text-base md:flex">
     <a href="/teams">Equipos</a>
     <a href={isHome ? "#sponsors" : "/#sponsors"}>Patrocinadores</a>
   </nav>
-  <NavIcon class="md:hidden"/>
+  <NavIcon class="md:hidden" />
 </header>
 
 <style>
