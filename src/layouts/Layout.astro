@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import Sidebar from "@/components/Sidebar.astro";
 
 interface Props {
   title?: string;
@@ -91,6 +92,7 @@ const imageURL = new URL(image, siteUrl).href;
     />
   </head>
   <body class="min-h-screen">
+    <Sidebar />
     <slot />
   </body>
 </html>
