@@ -8,6 +8,33 @@ interface TeamCardProps {
 
 export default function TeamCard({ team }: TeamCardProps) {
   return (
+    <article className="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+      <div className="relative">
+        <img
+          src={team.picture || DEFAULT_TEAM_PICTURE}
+          alt={team.teamName}
+          className="h-64 w-full shrink-0 rounded-t-lg object-cover"
+        />
+
+        <div className="absolute bottom-0 flex w-full gap-4 p-6">
+          <img
+            src={team.university.logo || DEFAULT_UNIVERSITY_LOGO}
+            alt={`${team.university.name} logo`}
+            className="h-12 w-12 rounded-full object-contain"
+          />
+          <div>
+            <h3 className="m-0 text-2xl font-bold text-gray-900">
+              {team.teamName}
+            </h3>
+            <p className="m-0 text-sm text-gray-600">{team.university.name}</p>
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-4 p-6"></div>
+    </article>
+  );
+
+  return (
     <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-6 flex gap-4">
         <img
