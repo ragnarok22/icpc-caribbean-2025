@@ -1,5 +1,6 @@
 import type { Team } from "@/lib/definitions";
 import { ParticipantType } from "@/lib/definitions";
+import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/info";
 
 interface TeamCardProps {
   team: Team;
@@ -10,7 +11,7 @@ export default function TeamCard({ team }: TeamCardProps) {
     <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-6 flex gap-4">
         <img
-          src={team.picture}
+          src={team.picture || DEFAULT_TEAM_PICTURE}
           alt={team.teamName}
           className="h-30 w-30 shrink-0 rounded-lg object-cover"
         />
@@ -20,7 +21,7 @@ export default function TeamCard({ team }: TeamCardProps) {
           </h3>
           <div className="flex items-center gap-2">
             <img
-              src={team.university.logo}
+              src={team.university.logo || DEFAULT_UNIVERSITY_LOGO}
               alt={`${team.university.name} logo`}
               className="h-8 w-8 object-contain"
             />

@@ -7,6 +7,12 @@ import {
 
 export const EVENT_DATE = new Date("2025-11-08T14:00:00");
 
+export const DEFAULT_TEAM_PICTURE =
+  "https://placehold.co/800?text=Sin+imagen&font=roboto";
+
+export const DEFAULT_UNIVERSITY_LOGO =
+  "https://placehold.co/800?text=Sin+imagen&font=roboto";
+
 export const CONTACT_INFORMATION = {
   email: "example@gmail.com",
   phone: "+1234567890",
@@ -75,7 +81,7 @@ export const SPONSORS: Sponsor[] = [
 export const TEAMS: Team[] = [
   {
     teamName: "Team 1",
-    picture: "https://team1.com/picture.png",
+    picture: "",
     participants: [
       {
         name: "Participant 1",
@@ -88,7 +94,7 @@ export const TEAMS: Team[] = [
     ],
     university: {
       name: "University 1",
-      logo: "https://university1.com/logo.png",
+      logo: "",
     },
   },
 ];
