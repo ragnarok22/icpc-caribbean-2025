@@ -1,0 +1,105 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before** reporting an issue, make sure to read the documentation and search existing issues. Usage questions such as ***"How do I...?"*** belong in Discussions and will be closed.
+
+  - type: checkboxes
+    attributes:
+      label: Did you check docs and existing issues?
+      description: Make sure you checked all of the below before submitting an issue
+      options:
+        - label: I have read the documentation
+          required: true
+        - label: I have searched the existing issues
+          required: true
+
+  - type: input
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      placeholder: "e.g. Chrome 120, Safari 17, Firefox 121"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating system/version
+      description: Which OS and version are you running?
+      placeholder: "e.g. macOS 14.2, Windows 11, Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Device
+      description: What device are you using?
+      placeholder: "e.g. Desktop, iPhone 12, Samsung Galaxy S21"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Version
+      description: Which version of the application are you using?
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is. Please include any related errors you see.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual behavior
+      description: A clear and concise description of what actually happened.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Possible solution
+      description: (Optional) Suggest a fix or reason for the bug.
+    validations:
+      required: false
