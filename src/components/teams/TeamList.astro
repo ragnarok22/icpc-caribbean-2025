@@ -1,0 +1,20 @@
+---
+import { TEAMS } from "@/lib/info";
+import Team from "./Team.astro";
+---
+
+<section class="mx-auto max-w-6xl p-8 md:p-4">
+  <div class="mb-8 text-center">
+    <h2>Participating Teams</h2>
+    <p class="m-0 text-base text-gray-600">
+      {TEAMS.length}
+      {TEAMS.length === 1 ? "team" : "teams"}
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-8 md:grid-cols-1 md:gap-6"
+  >
+    {TEAMS.map((team) => <Team team={team} />)}
+  </div>
+</section>

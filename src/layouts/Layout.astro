@@ -95,4 +95,50 @@ const imageURL = new URL(image, siteUrl).href;
     <Sidebar />
     <slot />
   </body>
+  <script>
+        function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const burger = document.getElementById('burger');
+
+      let isOpen = sidebar?.classList.contains('translate-x-0');
+      
+      if (sidebar && burger) {
+        sidebar.classList.toggle('translate-x-0');
+        sidebar.classList.toggle('-translate-x-full');
+        (burger as HTMLInputElement).checked = !(burger as HTMLInputElement).checked;
+
+        if (isOpen) {
+          sidebar.classList.remove('translate-x-0');
+          sidebar.classList.add('-translate-x-full');
+          (burger as HTMLInputElement).checked = false;
+        }
+        
+      }
+    }
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      const burger = document.getElementById('burger');
+      if (burger) {
+        burger.addEventListener('change', toggleSidebar)
+        const closeSidebar = document.getElementById('close-sidebar');
+        if (closeSidebar) {
+          closeSidebar.addEventListener('click', toggleSidebar)
+        }
+      }
+      
+ 
+      document.addEventListener('click', function(event) {
+        const sidebar = document.getElementById('sidebar');
+        const burger = document.getElementById('burger');
+        
+        if (sidebar && burger && !sidebar.contains(event.target as Node) && !burger?.closest('label')?.contains(event.target as Node)) {
+          if (sidebar.classList.contains('translate-x-0')) {
+            sidebar.classList.remove('translate-x-0');
+            sidebar.classList.add('-translate-x-full');
+            (burger as HTMLInputElement).checked = false;
+          }
+        }
+      });
+    });
+  </script>
 </html>

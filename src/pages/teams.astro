@@ -1,0 +1,15 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import TeamListWithFilter from "@/components/teams/TeamListWithFilter";
+import { TEAMS } from "@/lib/info";
+---
+
+<Layout>
+  <div
+    class="from-blue via-blue to-blue/90 relative bg-gradient-to-br text-white"
+  >
+    <Header />
+  </div>
+  <TeamListWithFilter client:load teams={TEAMS} />
+</Layout>

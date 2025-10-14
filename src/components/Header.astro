@@ -1,48 +1,46 @@
 ---
 import NavIcon from "@/components/NavIcon.astro";
 import IcpcLogo from "@/assets/ICPC_logo.svg";
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
 ---
 
-<header class="mx-auto flex max-w-2xl justify-between items-center px-4 py-4 sm:px-6">
-
-  <NavIcon />
-  <img src={IcpcLogo.src} alt="ICPC Logo" class="w-20 h-20" />
-
-  <nav class="hidden md:block text-sm sm:text-base">
-    <a href="#teams">Equipos</a>
+<header class="mx-auto flex max-w-2xl justify-between items-center px-8 py-4 sm:px-6 relative z-10 -space-x-12 :-space-x-0">
+  <IcpcLogo class="w-20 h-20"/>
+  <nav class="text-sm sm:text-base hidden md:flex items-center gap-6">
+    <a href="/teams">Equipos</a>
+    <a href={isHome ? "#sponsors" : "/#sponsors"}>Patrocinadores</a>
   </nav>
-  <nav class="hidden md:block text-sm sm:text-base">
-    <a href="#sponsors">Patrocinadores</a>
-  </nav>
+  <NavIcon class="md:hidden"/>
 </header>
 
 <style>
-  header nav {
+  header nav a {
     --size: 3px;
     position: relative;
   }
-  header nav::after {
+  header nav a::after {
     content: "";
     position: absolute;
-    bottom: -4px;
+    bottom: 2px;
     left: 50%;
     background-color: var(--color-red);
     height: var(--size);
     width: 0;
     transition: width 0.2s ease-in-out;
   }
-  header nav::before {
+  header nav a::before {
     content: "";
     position: absolute;
-    bottom: -4px;
+    bottom: 2px;
     right: 50%;
     background-color: var(--color-yellow);
     height: var(--size);
     width: 0;
     transition: width 0.2s ease-in-out;
   }
-  header nav:hover::after,
-  header nav:hover::before {
+  header nav a:hover::after,
+  header nav a:hover::before {
     width: 50%;
   }
 </style>
