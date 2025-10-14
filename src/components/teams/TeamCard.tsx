@@ -30,35 +30,31 @@ export default function TeamCard({ team }: TeamCardProps) {
           </div>
         </div>
       </div>
-      <div className="flex gap-4 p-6"></div>
+      <div className="flex gap-4 p-6">
+        <ul className="flex w-full flex-col gap-2">
+          {team.participants.map((participant, index) => (
+            <li key={index} className="group">
+              <div
+                className={`flex items-center justify-between rounded-xl px-2 py-1 transition-all ${participant.type == ParticipantType.MEMBER ? "bg-blue/10 group-hover:bg-blue/20" : "bg-yellow/10 group-hover:bg-yellow/20"}`}
+              >
+                <span>{participant.name}</span>
+                <span
+                  className={`rounded-xl border px-2 py-1 text-sm transition-all ${participant.type == ParticipantType.MEMBER ? "border-blue text-blue" : "border-yellow text-yellow"}`}
+                >
+                  {participant.type === ParticipantType.COACH
+                    ? "Coach"
+                    : "Member"}
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </article>
   );
 
   return (
     <article className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="mb-6 flex gap-4">
-        <img
-          src={team.picture || DEFAULT_TEAM_PICTURE}
-          alt={team.teamName}
-          className="h-30 w-30 shrink-0 rounded-lg object-cover"
-        />
-        <div className="flex flex-col justify-center gap-2">
-          <h3 className="m-0 text-2xl font-bold text-gray-900">
-            {team.teamName}
-          </h3>
-          <div className="flex items-center gap-2">
-            <img
-              src={team.university.logo || DEFAULT_UNIVERSITY_LOGO}
-              alt={`${team.university.name} logo`}
-              className="h-8 w-8 object-contain"
-            />
-            <span className="text-sm text-gray-600">
-              {team.university.name}
-            </span>
-          </div>
-        </div>
-      </div>
-
       <div>
         <h4 className="m-0 mb-4 text-lg font-semibold text-gray-900">
           Participants
