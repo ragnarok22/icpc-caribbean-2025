@@ -2,11 +2,7 @@
 
 ## Supported Versions
 
-We actively support the latest version of the ICPC Caribbean 2025 website. Security updates will be applied to the main branch and deployed as needed.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| Latest  | :white_check_mark: |
+This project uses a rolling release model. We continuously deploy updates from the main branch, and security fixes are applied and deployed immediately as they become available. The deployed website is always the latest version from the main branch.
 
 ## Reporting a Vulnerability
 
@@ -66,11 +62,16 @@ When contributing to this project, please follow these security best practices:
 
 ## Security Updates
 
-Security updates will be released as soon as possible after a vulnerability is confirmed and fixed. Users should:
+Security updates are deployed continuously as part of our rolling release process. Once a vulnerability is confirmed and fixed:
+
+- The fix is merged to the main branch
+- The update is automatically deployed to production
+- A security advisory is published on GitHub
+
+Users should:
 
 - Watch the repository for security announcements
 - Subscribe to GitHub Security Advisories
-- Keep their deployments up to date with the latest releases
 
 ## Responsible Disclosure
 
