@@ -37,10 +37,13 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
   const hasActiveFilters = nameFilter !== "" || universityFilter !== "";
 
   return (
-    <div className="team-filter">
-      <div className="filter-controls">
-        <div className="filter-group">
-          <label htmlFor="name-filter" className="filter-label">
+    <div className="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="flex flex-wrap items-end gap-4">
+        <div className="flex min-w-[200px] flex-1 flex-col gap-2">
+          <label
+            htmlFor="name-filter"
+            className="text-sm font-semibold text-gray-700"
+          >
             Team Name
           </label>
           <input
@@ -49,19 +52,22 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
             placeholder="Search by team name..."
             value={nameFilter}
             onChange={(e) => setNameFilter(e.target.value)}
-            className="filter-input"
+            className="rounded-md border border-gray-300 bg-white px-3.5 py-2.5 text-[15px] text-gray-700 transition-all placeholder:text-gray-400 focus:border-blue-500 focus:ring-3 focus:ring-blue-500/10 focus:outline-none"
           />
         </div>
 
-        <div className="filter-group">
-          <label htmlFor="university-filter" className="filter-label">
+        <div className="flex min-w-[200px] flex-1 flex-col gap-2">
+          <label
+            htmlFor="university-filter"
+            className="text-sm font-semibold text-gray-700"
+          >
             University
           </label>
           <select
             id="university-filter"
             value={universityFilter}
             onChange={(e) => setUniversityFilter(e.target.value)}
-            className="filter-select"
+            className="rounded-md border border-gray-300 bg-white px-3.5 py-2.5 text-[15px] text-gray-700 transition-all focus:border-blue-500 focus:ring-3 focus:ring-blue-500/10 focus:outline-none"
           >
             <option value="">All Universities</option>
             {universities.map((university) => (
@@ -73,7 +79,10 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
         </div>
 
         {hasActiveFilters && (
-          <button onClick={handleReset} className="filter-reset-button">
+          <button
+            onClick={handleReset}
+            className="cursor-pointer rounded-md border border-gray-300 bg-gray-100 px-5 py-2.5 text-[15px] font-medium whitespace-nowrap text-gray-600 transition-all hover:border-gray-400 hover:bg-gray-200 active:scale-[0.98]"
+          >
             Reset Filters
           </button>
         )}

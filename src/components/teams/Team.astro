@@ -9,34 +9,43 @@ interface Props {
 const { team } = Astro.props;
 ---
 
-<article class="team-card">
-  <div class="team-header">
+<article
+  class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+>
+  <div class="mb-6 flex gap-4">
     <img
       src={team.picture}
       alt={`${team.picture} team photo`}
-      class="team-picture"
+      class="h-30 w-30 shrink-0 rounded-lg object-cover"
     />
-    <div class="team-info">
-      <h3 class="team-name">{team.teamName}</h3>
-      <div class="university">
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="m-0 text-2xl font-bold text-gray-900">{team.teamName}</h3>
+      <div class="flex items-center gap-2">
         <img
           src={team.university.logo}
           alt={`${team.university.name} logo`}
-          class="university-logo"
+          class="h-8 w-8 object-contain"
         />
-        <span class="university-name">{team.university.name}</span>
+        <span class="text-sm text-gray-600">{team.university.name}</span>
       </div>
     </div>
   </div>
 
-  <div class="participants">
-    <h4>Participants</h4>
-    <ul class="participants-list">
+  <div>
+    <h4 class="m-0 mb-4 text-lg font-semibold text-gray-900">Participants</h4>
+    <ul class="m-0 flex list-none flex-col gap-3 p-0">
       {
         team.participants.map((participant) => (
-          <li class="participant">
-            <span class="participant-name">{participant.name}</span>
-            <span class={`participant-type ${participant.type.toLowerCase()}`}>
+          <li class="flex items-center justify-between rounded bg-gray-50 p-2">
+            <span class="font-medium text-gray-800">{participant.name}</span>
+            <span
+              class:list={[
+                "rounded px-2 py-1 text-xs font-semibold uppercase",
+                participant.type === ParticipantType.COACH
+                  ? "bg-yellow-200 text-yellow-800"
+                  : "bg-blue-200 text-blue-800",
+              ]}
+            >
               {participant.type === ParticipantType.COACH ? "Coach" : "Member"}
             </span>
           </li>
@@ -45,111 +54,3 @@ const { team } = Astro.props;
     </ul>
   </div>
 </article>
-
-<style>
-  .team-card {
-    border: 1px solid var(--color-border, #e2e8f0);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    background: var(--color-bg-card, white);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s;
-  }
-
-  .team-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .team-header {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .team-picture {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .team-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-
-  .team-name {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-text-primary, #1a202c);
-  }
-
-  .university {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .university-logo {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-  }
-
-  .university-name {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary, #718096);
-  }
-
-  .participants h4 {
-    margin: 0 0 1rem 0;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-text-primary, #1a202c);
-  }
-
-  .participants-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .participant {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    background: var(--color-bg-secondary, #f7fafc);
-    border-radius: 0.25rem;
-  }
-
-  .participant-name {
-    font-weight: 500;
-    color: var(--color-text-primary, #2d3748);
-  }
-
-  .participant-type {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-  }
-
-  .participant-type.member {
-    background: var(--color-member-bg, #bee3f8);
-    color: var(--color-member-text, #2c5282);
-  }
-
-  .participant-type.coach {
-    background: var(--color-coach-bg, #faf089);
-    color: var(--color-coach-text, #744210);
-  }
-</style>
