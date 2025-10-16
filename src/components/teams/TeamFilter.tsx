@@ -76,7 +76,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
       </div>
 
       {/* Filter controls */}
-      <div className="bg-gradient-to-b from-gray-50 to-white p-6 relative">
+      <div className="relative bg-gradient-to-b from-gray-50 to-white p-6">
         <div className="flex flex-wrap items-end gap-4">
           <div className="group flex min-w-[200px] flex-1 flex-col gap-2">
             <label
