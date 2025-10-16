@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Team } from "@/lib/definitions";
+import CustomSelect from "./CustomSelect";
 
 interface TeamFilterProps {
   teams: Team[];
@@ -14,6 +15,15 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
   const universities = Array.from(
     new Set(teams.map((team) => team.university.name)),
   ).sort();
+
+  // Prepare options for CustomSelect
+  const universityOptions = [
+    { value: "", label: "Todas las Universidades" },
+    ...universities.map((university) => ({
+      value: university,
+      label: university,
+    })),
+  ];
 
   useEffect(() => {
     const filtered = teams.filter((team) => {
@@ -37,7 +47,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
   const hasActiveFilters = nameFilter !== "" || universityFilter !== "";
 
   return (
-    <div className="mb-10 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl">
+    <div className="mb-10 rounded-2xl border border-gray-200 bg-white shadow-xl">
       {/* Header */}
       <div className="from-blue to-blue/90 bg-gradient-to-r px-6 py-4">
         <div className="flex items-center gap-3">
@@ -66,7 +76,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
       </div>
 
       {/* Filter controls */}
-      <div className="bg-gradient-to-b from-gray-50 to-white p-6">
+      <div className="bg-gradient-to-b from-gray-50 to-white p-6 relative">
         <div className="flex flex-wrap items-end gap-4">
           <div className="group flex min-w-[200px] flex-1 flex-col gap-2">
             <label
@@ -135,36 +145,12 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
               </svg>
               Universidad
             </label>
-            <div className="relative">
-              <select
-                id="university-filter"
-                value={universityFilter}
-                onChange={(e) => setUniversityFilter(e.target.value)}
-                className="hover:border-blue/50 focus:border-blue focus:ring-blue/10 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-4 py-3 pr-10 text-[15px] text-gray-700 shadow-sm transition-all focus:shadow-lg focus:ring-4 focus:outline-none"
-              >
-                <option value="">Todas las Universidades</option>
-                {universities.map((university) => (
-                  <option key={university} value={university}>
-                    {university}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-400">
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
+            <CustomSelect
+              options={universityOptions}
+              value={universityFilter}
+              onChange={setUniversityFilter}
+              placeholder="Todas las Universidades"
+            />
           </div>
 
           {hasActiveFilters && (
