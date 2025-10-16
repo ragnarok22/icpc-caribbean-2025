@@ -6,7 +6,7 @@ import { SOCIALS } from "@/lib/info";
 
 <footer class="bg-blue relative overflow-hidden">
   <div
-    class="flex flex-wrap items-center justify-center gap-4 text-white md:mt-12 md:mb-8"
+    class="mb-4 flex flex-wrap items-center justify-center gap-4 text-white md:mt-12 md:mb-8"
   >
     {
       SOCIALS.map((social) => (
@@ -32,7 +32,7 @@ import { SOCIALS } from "@/lib/info";
   <Image
     src={bgImage}
     alt="City Background"
-    class="footer-image h-full w-full object-cover object-center"
+    class="footer-image h-full w-full scale-150 object-cover object-center md:scale-100"
   />
   <div class="overlay absolute right-0 bottom-0 z-10 h-20 w-full"></div>
 </footer>
