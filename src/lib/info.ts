@@ -5,6 +5,9 @@ import {
   type Team,
 } from "./definitions";
 
+import Instagram from "@/assets/svg/instagram.svg";
+import Telegram from "@/assets/svg/telegram.svg";
+
 export const EVENT_DATE = new Date("2025-11-08T14:00:00");
 
 export const DEFAULT_TEAM_PICTURE =
@@ -31,12 +34,22 @@ export const SCHEDULE = [
 
 export const SOCIALS: Social[] = [
   {
-    type: "instagram",
+    name: "instagram",
     url: "https://instagram.com/icpc_caribbean",
+    image: {
+      logo: Instagram,
+      width: 200,
+      height: 200,
+    },
   },
   {
-    type: "telegram",
+    name: "telegram",
     url: "https://t.me/ICPC_Caribbean",
+    image: {
+      logo: Telegram,
+      width: 200,
+      height: 200,
+    },
   },
 ];
 
