@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import type { Team } from "@/lib/definitions";
 import { ParticipantType } from "@/lib/definitions";
 import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/info";
@@ -70,22 +72,25 @@ export default function TeamCard({ team }: TeamCardProps) {
         <ul className="flex flex-col gap-2.5">
           {team.participants.map((participant, index) => {
             const isCoach = participant.type === ParticipantType.COACH;
+            const key = (participant as any).id || index; // Use id if available
             return (
-              <li key={index} className="group/item">
+              <li key={key} className="group/item">
                 <div
-                  className={`relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300 ${
+                  className={clsx(
+                    "relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300",
                     isCoach
                       ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-gradient-to-r"
                       : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-gradient-to-r"
-                  }`}
+                  )}
                 >
                   {/* Animated background shimmer */}
                   <div
-                    className={`absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full ${
+                    className={clsx(
+                      "absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full",
                       isCoach
-                        ? "via-yellow/10 bg-gradient-to-r from-transparent to-transparent"
-                        : "via-blue/10 bg-gradient-to-r from-transparent to-transparent"
-                    }`}
+                        ? "bg-gradient-to-r from-yellow/20 via-yellow/10 to-transparent"
+                        : "bg-gradient-to-r from-blue/20 via-blue/10 to-transparent"
+                    )}
                   ></div>
 
                   <div className="relative flex items-center justify-between">
@@ -93,9 +98,13 @@ export default function TeamCard({ team }: TeamCardProps) {
                       {participant.name}
                     </span>
                     <span
-                      className={`rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all ${
-                        isCoach ? "bg-yellow text-blue" : "bg-blue text-white"
-                      }`}
+                      className={clsx(
+                        "rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all",
+                        {
+                          "bg-yellow-500 text-white": isCoach,
+                          "bg-blue-500 text-white": !isCoach,
+                        }
+                      )}
                     >
                       {isCoach ? "Coach" : "Member"}
                     </span>
