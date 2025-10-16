@@ -92,6 +92,10 @@ Preview the production build locally before deploying.
 - Sponsor section
 - Responsive design
 
+## 🎨 Credits
+
+Icons used in this project are from [SVG Repo](https://www.svgrepo.com).
+
 ## 🤝 Contributing
 
 We welcome contributions from the community! Please read our [Contributing Guide](CONTRIBUTING.md) to learn how to get started.
