@@ -1,17 +1,21 @@
 ---
 import { Image } from "astro:assets";
-import bgImage from "@/assets/holguin-footer.png";
+import bgImage from "@/assets/havana-footer.png";
 ---
 
-<footer class="overflow-hidden">
+<footer class="relative overflow-hidden">
   <Image
     src={bgImage}
     alt="City Background"
     class="footer-image h-full w-full object-cover object-center"
   />
+  <div class="overlay absolute right-0 bottom-0 z-10 h-20 w-full"></div>
 </footer>
 
 <style>
+  .overlay {
+    background: linear-gradient(180deg, transparent 0%, var(--color-blue) 100%);
+  }
   @keyframes footerSlideUp {
     0% {
       transform: translateY(50px);
