@@ -3,7 +3,7 @@ export { SOCIALS } from "./socials";
 export { SPONSORS } from "./sponsors";
 export { TEAMS } from "./teams";
 
-export const EVENT_DATE = new Date("2025-11-07T9:00:00");
+export const EVENT_DATE = new Date("2025-11-08T09:00:00-05:00");
 
 export const DEFAULT_TEAM_PICTURE =
   "https://placehold.co/800/?text=Sin+imagen&font=roboto";
