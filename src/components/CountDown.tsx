@@ -1,4 +1,4 @@
-import { EVENT_DATE } from "@/lib/info";
+import { EVENT_DATE } from "@/lib/data";
 import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
 import { useEffect, useState } from "react";
 
