@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { CountDown } from "./CountDown.tsx";
+import ICPCCaribeLogo from "@/assets/icpc-caribe-logo.png";
 ---
 
 <section class="bg-blue px-4 pt-8 pb-16 text-center text-white sm:px-6">
@@ -27,7 +29,8 @@ import { CountDown } from "./CountDown.tsx";
       OpenAI y Google DeepMind, continuando una tradición impulsada
       históricamente por Apple, AT&amp;T, Microsoft e IBM.
     </p>
-    <div class="mx-auto mt-6">
+
+    <div class="mx-auto mt-8">
       <CountDown client:load />
     </div>
   </div>
