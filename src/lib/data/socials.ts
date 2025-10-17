@@ -2,6 +2,8 @@ import { type Social } from "@/lib/definitions";
 
 import Instagram from "@/assets/svg/instagram.svg";
 import Telegram from "@/assets/svg/telegram.svg";
+import Facebook from "@/assets/svg/facebook.svg";
+import Youtube from "@/assets/svg/youtube.svg";
 
 export const SOCIALS: Social[] = [
   {
@@ -18,6 +20,15 @@ export const SOCIALS: Social[] = [
     url: "https://t.me/ICPC_Caribbean",
     image: {
       logo: Telegram,
+      width: 200,
+      height: 200,
+    },
+  },
+  {
+    name: "youtube",
+    url: "https://www.youtube.com/@CaribbeanMedia",
+    image: {
+      logo: Youtube,
       width: 200,
       height: 200,
     },

@@ -27,7 +27,7 @@ export type Sponsor = {
 };
 
 export type Social = {
-  name: "discord" | "instagram" | "twitter" | "github" | "telegram";
+  name: "instagram" | "telegram" | "youtube" | "facebook";
   url: string;
   image: {
     logo: any;
