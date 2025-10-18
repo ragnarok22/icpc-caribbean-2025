@@ -2,7 +2,7 @@ import { type Social } from "@/lib/definitions";
 
 import Instagram from "@/assets/svg/instagram.svg";
 import Telegram from "@/assets/svg/telegram.svg";
-import Facebook from "@/assets/svg/facebook.svg";
+// import Facebook from "@/assets/svg/facebook.svg";
 import Youtube from "@/assets/svg/youtube.svg";
 
 export const SOCIALS: Social[] = [
