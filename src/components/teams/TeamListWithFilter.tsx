@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { Team } from "@/lib/definitions";
 import TeamFilter from "./TeamFilter";
 import TeamCard from "./TeamCard";
@@ -125,11 +126,28 @@ export default function TeamListWithFilter({ teams }: TeamListWithFilterProps) {
             </p>
           </div>
         ) : (
-          <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-            {filteredTeams.map((team, index) => (
-              <TeamCard key={index} team={team} />
-            ))}
-          </div>
+          <motion.div
+            className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
+            layout
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredTeams.map((team, index) => (
+                <motion.div
+                  key={`${team.teamName}-${index}`}
+                  layout
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{
+                    duration: 0.3,
+                    layout: { duration: 0.3 },
+                  }}
+                >
+                  <TeamCard team={team} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         )}
       </section>
     </div>
