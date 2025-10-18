@@ -1,8 +1,8 @@
-# ICPC Caribbean 2025
+# The 2025 ICPC Caribbean Final - Cuban Site
 
 [![CI](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml)
 
-Website for the ICPC Caribbean Finals 2025 event.
+Website for the he 2025 ICPC Caribbean Final (Cuban Site) event.
 
 ## 🛠️ Tech Stack
 
