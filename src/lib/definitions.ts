@@ -30,7 +30,7 @@ export type Social = {
   name: "instagram" | "telegram" | "youtube" | "facebook";
   url: string;
   image: {
-    logo: any;
+    logo: string;
     width: number;
     height: number;
   };
