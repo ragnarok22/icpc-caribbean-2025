@@ -1,4 +1,4 @@
-import { EVENT_DATE } from "@/lib/info";
+import { EVENT_DATE } from "@/lib/data";
 import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
 import { useEffect, useState } from "react";
 
@@ -67,7 +67,7 @@ const TimeUnit = ({ value, label }: { value: number; label: string }) => {
           format={{ minimumIntegerDigits: 2 }}
         />
       </div>
-      <span className="mt-2 text-sm font-medium tracking-wide text-gray-600 uppercase md:text-base dark:text-gray-400">
+      <span className="text-yellow mt-2 text-sm font-medium tracking-wide uppercase md:text-base">
         {label}
       </span>
     </div>

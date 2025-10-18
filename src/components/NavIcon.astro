@@ -1,0 +1,51 @@
+<label
+  class="relative block h-7.5 w-10 cursor-pointer bg-transparent md:hidden"
+  for="burger"
+>
+  <input type="checkbox" id="burger" class="hidden" />
+  <span class="hamburger-line"></span>
+  <span class="hamburger-line"></span>
+  <span id="hamburger-line-3" class="hamburger-line"></span>
+</label>
+
+<style>
+  .hamburger-line {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 4px;
+    width: 100%;
+    transform-origin: left;
+    border-radius: 4px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #hamburger-line-3 {
+    top: 0;
+    background-color: var(--color-red) !important;
+  }
+
+  .hamburger-line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-yellow) !important;
+  }
+
+  .hamburger-line:nth-child(3) {
+    bottom: 0;
+    background-color: var(--color-blue) !important;
+  }
+
+  #burger:checked ~ .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #burger:checked ~ .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #burger:checked ~ .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+</style>

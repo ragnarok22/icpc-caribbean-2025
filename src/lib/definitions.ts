@@ -27,6 +27,11 @@ export type Sponsor = {
 };
 
 export type Social = {
-  type: "discord" | "instagram" | "twitter" | "github" | "telegram";
+  name: "instagram" | "telegram" | "youtube" | "facebook";
   url: string;
+  image: {
+    logo: string;
+    width: number;
+    height: number;
+  };
 };

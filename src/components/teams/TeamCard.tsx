@@ -1,6 +1,6 @@
 import type { Team } from "@/lib/definitions";
 import { ParticipantType } from "@/lib/definitions";
-import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/info";
+import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/data";
 
 interface TeamCardProps {
   team: Team;

@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import Sidebar from "@/components/Sidebar.astro";
 
 interface Props {
   title?: string;
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const {
-  title = "ICPC Final Caribeña 2025 - Universidad de Holguín",
+  title = "Final Caribeña 2025 del ICPC",
   description = "Final Regional del Caribe del ICPC 2025 organizada por la Universidad de Holguín, Cuba. Competencia internacional de programación competitiva.",
   image = "/og-image.jpg",
   canonical = Astro.url.pathname,
@@ -26,6 +27,17 @@ const imageURL = new URL(image, siteUrl).href;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -91,6 +103,7 @@ const imageURL = new URL(image, siteUrl).href;
     />
   </head>
   <body class="min-h-screen">
+    <Sidebar />
     <slot />
   </body>
 </html>

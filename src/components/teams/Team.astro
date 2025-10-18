@@ -1,9 +1,9 @@
 ---
-import type { Team } from "@/lib/definitions";
+import type { Team as TeamType } from "@/lib/definitions";
 import { ParticipantType } from "@/lib/definitions";
 
 interface Props {
-  team: Team;
+  team: TeamType;
 }
 
 const { team } = Astro.props;

@@ -1,9 +1,9 @@
 ---
-import { EVENT_DATE } from "@/lib/info";
+import { EVENT_DATE } from "@/lib/data";
 ---
 
 <main
-  class="absolute top-1/2 right-1/2 flex translate-x-1/2 -translate-y-1/2 flex-col gap-2 px-4 text-center"
+  class="absolute top-1/2 right-1/2 z-0 flex w-10/12 translate-x-1/2 -translate-y-1/2 flex-col gap-2 px-4 text-center md:w-1/2"
 >
   <time
     datetime={EVENT_DATE.toISOString().split("T")[0]}
@@ -17,7 +17,7 @@ import { EVENT_DATE } from "@/lib/info";
     }</time
   >
   <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-    ICPC Caribbean 2025
+    Final Caribeña 2025 del ICPC
   </h1>
   <p class="text-base sm:text-lg md:text-xl lg:text-2xl">
     El evento más grande de programación de la región
