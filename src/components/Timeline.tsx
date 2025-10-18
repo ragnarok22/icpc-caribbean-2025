@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { SCHEDULE } from "@/lib/data";
 
 interface ScheduleItem {
@@ -68,6 +68,18 @@ const TimelineItem = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const date = new Date(item.date);
   const formattedDate = date.toLocaleDateString("es-ES", {
@@ -86,7 +98,7 @@ const TimelineItem = ({
         className={`w-full pl-6 md:w-5/12 md:pl-0 ${isLeft ? "md:pr-0 md:text-right" : "md:pl-0 md:text-left"}`}
         initial={{
           opacity: 0,
-          x: isLeft ? -50 : 50,
+          x: isMobile ? 0 : isLeft ? -50 : 50,
         }}
         animate={
           isInView
@@ -96,7 +108,7 @@ const TimelineItem = ({
               }
             : {
                 opacity: 0,
-                x: isLeft ? -50 : 50,
+                x: isMobile ? 0 : isLeft ? -50 : 50,
               }
         }
         transition={{

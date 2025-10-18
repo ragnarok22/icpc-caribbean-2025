@@ -26,6 +26,7 @@ body {
     Arial,
     "Noto Sans",
     sans-serif;
+  overflow-x: hidden;
 }
 
 h1,

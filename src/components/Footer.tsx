@@ -64,8 +64,8 @@ const Footer = () => {
   const isInView = useInView(footerRef, { once: true, amount: 0.1 });
 
   return (
-    <footer ref={footerRef} className="bg-blue relative overflow-hidden">
-      <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:mt-12 md:mb-8">
+    <footer ref={footerRef} className="bg-blue relative">
+      <div className="flex flex-wrap items-center justify-center gap-4 pb-4 md:pt-12 md:pb-8">
         {SOCIALS.map((social, index) => (
           <motion.a
             key={social.name}
@@ -135,9 +135,9 @@ const Footer = () => {
       <motion.img
         src={havanaFooter.src}
         alt="City Background"
-        className="h-full w-full scale-150 object-cover object-center md:scale-100"
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 50 }}
+        className="h-full w-full object-cover object-center md:scale-100"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       />
       <div className="overlay absolute right-0 bottom-0 z-10 h-20 w-full"></div>
