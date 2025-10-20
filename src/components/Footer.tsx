@@ -66,7 +66,7 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="bg-blue relative overflow-y-hidden pt-12 md:pt-4 lg:pt-0"
+      className="bg-blue relative overflow-hidden pt-12 md:pt-4 lg:pt-0"
     >
       <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:mt-12 md:mb-8">
         {SOCIALS.map((social, index) => (
