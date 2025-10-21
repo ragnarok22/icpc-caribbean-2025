@@ -1,6 +1,6 @@
-# Contributing to ICPC Caribbean 2025
+# Contributing to Final Caribeña 2025 del ICPC
 
-Thank you for your interest in contributing to the ICPC Caribbean 2025 website! We welcome contributions from the community.
+Thank you for your interest in contributing to the Final Caribeña 2025 del ICPC website! We welcome contributions from the community.
 
 ## Code of Conduct
 

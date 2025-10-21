@@ -1,4 +1,4 @@
-# robots.txt for ICPC Caribbean 2025
+# robots.txt for Final Caribeña 2025 del ICPC
 User-agent: *
 Allow: /
 

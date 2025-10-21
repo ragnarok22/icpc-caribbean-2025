@@ -23,7 +23,7 @@ export default function TeamListWithFilter({ teams }: TeamListWithFilterProps) {
             <div className="bg-yellow/20 flex items-center gap-2 rounded-full px-4 py-2 backdrop-blur-sm">
               <div className="bg-yellow h-2 w-2 animate-pulse rounded-full"></div>
               <span className="text-sm font-semibold tracking-wide">
-                ICPC Caribbean 2025
+                Final Caribeña 2025 del ICPC
               </span>
             </div>
           </div>

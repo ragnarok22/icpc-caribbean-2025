@@ -1,8 +1,8 @@
-# The 2025 ICPC Caribbean Final - Cuban Site
+# Final Caribeña 2025 del ICPC - Sede Cubana
 
 [![CI](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml)
 
-Official website the 2025 ICPC Caribbean Final (Cuban Site), hosted by Universidad de Holguín, Cuba. The ICPC is a prestigious regional programming competition that brings together the best teams from the Caribbean region to compete in algorithmic problem-solving.
+Sitio web oficial de la Final Caribeña 2025 del ICPC (Sede Cubana), organizada por la Universidad de Holguín, Cuba. El ICPC es una prestigiosa competencia regional de programación que reúne a los mejores equipos de la región del Caribe para competir en resolución algorítmica de problemas.
 
 ## 🛠️ Tech Stack
 
@@ -100,7 +100,7 @@ Preview the production build locally before deploying.
 
 ## 🎯 Features
 
-- **Event Information** - Comprehensive details about the ICPC Caribbean Finals 2025
+- **Event Information** - Comprehensive details about the Final Caribeña 2025 del ICPC
 - **Live Countdown** - Real-time countdown timer to the competition start
 - **Interactive Timeline** - Event schedule with detailed agenda
 - **Team Directory** - Searchable and filterable team listings with university information
@@ -144,7 +144,7 @@ For information about reporting security vulnerabilities, please see our [Securi
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-Copyright (C) 2025 ICPC Caribbean
+Copyright (C) 2025 Final Caribeña del ICPC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

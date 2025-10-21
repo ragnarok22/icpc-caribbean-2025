@@ -130,7 +130,7 @@ const Footer = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         <p>
-          &copy; 2025 ICPC Final Caribeña
+          &copy; 2025 Final Caribeña del ICPC
           <br />
           Todos los derechos reservados
         </p>

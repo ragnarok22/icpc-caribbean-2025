@@ -6,7 +6,7 @@ This project uses a rolling release model. We continuously deploy updates from t
 
 ## Reporting a Vulnerability
 
-We take the security of the ICPC Caribbean 2025 website seriously. If you discover a security vulnerability, please report it responsibly.
+We take the security of the Final Caribeña 2025 del ICPC website seriously. If you discover a security vulnerability, please report it responsibly.
 
 ### How to Report
 
@@ -92,4 +92,4 @@ If you have questions about this security policy, please open an issue or contac
 
 ---
 
-Thank you for helping keep ICPC Caribbean 2025 and our users safe!
+Thank you for helping keep Final Caribeña 2025 del ICPC and our users safe!

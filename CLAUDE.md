@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro-based static website for the ICPC Caribbean Finals 2025 event, hosted by Universidad de Holguín, Cuba. The site features event information, countdown timer, schedule, team listings, and sponsor sections.
+This is an Astro-based static website for the Final Caribeña 2025 del ICPC event, hosted by Universidad de Holguín, Cuba. The site features event information, countdown timer, schedule, team listings, and sponsor sections.
 
 ## Tech Stack
 
