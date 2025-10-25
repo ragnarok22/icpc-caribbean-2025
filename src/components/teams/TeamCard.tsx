@@ -8,7 +8,7 @@ interface TeamCardProps {
 
 export default function TeamCard({ team }: TeamCardProps) {
   return (
-    <article className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       {/* Gradient overlay on image */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -57,7 +57,7 @@ export default function TeamCard({ team }: TeamCardProps) {
       </div>
 
       {/* Participants section */}
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex items-center justify-between">
           <h4 className="text-sm font-bold tracking-wider text-gray-500 uppercase">
             Integrantes
