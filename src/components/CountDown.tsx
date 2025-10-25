@@ -32,7 +32,7 @@ export const CountDown = () => {
   if (seconds === 0) {
     return (
       <div className="text-center text-4xl font-bold md:text-6xl">
-        <p className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <p className="bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
           Event Started!
         </p>
       </div>

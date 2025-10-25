@@ -49,7 +49,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
   return (
     <div className="mb-10 rounded-2xl border border-gray-200 bg-white shadow-xl">
       {/* Header */}
-      <div className="from-blue to-blue/90 bg-gradient-to-r px-6 py-4">
+      <div className="from-blue to-blue/90 bg-linear-to-r px-6 py-4">
         <div className="flex items-center gap-3">
           <div className="bg-yellow/20 flex h-10 w-10 items-center justify-center rounded-full backdrop-blur-sm">
             <svg
@@ -76,7 +76,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
       </div>
 
       {/* Filter controls */}
-      <div className="relative bg-gradient-to-b from-gray-50 to-white p-6">
+      <div className="relative bg-linear-to-b from-gray-50 to-white p-6">
         <div className="flex flex-wrap items-end gap-4">
           <div className="group flex min-w-[200px] flex-1 flex-col gap-2">
             <label
@@ -156,7 +156,7 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
           {hasActiveFilters && (
             <button
               onClick={handleReset}
-              className="group hover:border-blue hover:from-blue hover:to-blue/90 relative overflow-hidden rounded-xl border-2 border-gray-300 bg-gradient-to-r from-gray-100 to-gray-50 px-6 py-3 text-[15px] font-bold whitespace-nowrap text-gray-700 shadow-sm transition-all hover:text-white hover:shadow-lg active:scale-95"
+              className="group hover:border-blue hover:from-blue hover:to-blue/90 relative overflow-hidden rounded-xl border-2 border-gray-300 bg-linear-to-r from-gray-100 to-gray-50 px-6 py-3 text-[15px] font-bold whitespace-nowrap text-gray-700 shadow-sm transition-all hover:text-white hover:shadow-lg active:scale-95"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <svg

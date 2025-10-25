@@ -11,7 +11,7 @@ export default function TeamCard({ team }: TeamCardProps) {
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       {/* Gradient overlay on image */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 z-10 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
         <img
           src={team.picture || DEFAULT_TEAM_PICTURE}
           alt={team.teamName}
@@ -75,16 +75,16 @@ export default function TeamCard({ team }: TeamCardProps) {
                 <div
                   className={`relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300 ${
                     isCoach
-                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-gradient-to-r"
-                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-gradient-to-r"
+                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-linear-to-r"
+                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-linear-to-r"
                   }`}
                 >
                   {/* Animated background shimmer */}
                   <div
                     className={`absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full ${
                       isCoach
-                        ? "via-yellow/10 bg-gradient-to-r from-transparent to-transparent"
-                        : "via-blue/10 bg-gradient-to-r from-transparent to-transparent"
+                        ? "via-yellow/10 bg-linear-to-r from-transparent to-transparent"
+                        : "via-blue/10 bg-linear-to-r from-transparent to-transparent"
                     }`}
                   ></div>
 
