@@ -16,14 +16,11 @@ export default function TeamFilter({ teams, onFilterChange }: TeamFilterProps) {
     new Set(teams.map((team) => team.university.name)),
   ).sort();
 
-  // Prepare options for CustomSelect
-  const universityOptions = [
-    { value: "", label: "Todas las Universidades" },
-    ...universities.map((university) => ({
-      value: university,
-      label: university,
-    })),
-  ];
+  // Prepare options for CustomSelect (without the "all" option)
+  const universityOptions = universities.map((university) => ({
+    value: university,
+    label: university,
+  }));
 
   useEffect(() => {
     const filtered = teams.filter((team) => {

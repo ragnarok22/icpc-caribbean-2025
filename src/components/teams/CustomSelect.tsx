@@ -49,14 +49,11 @@ export default function CustomSelect({
   };
 
   return (
-    <div
-      ref={selectRef}
-      className={`relative z-10 w-full cursor-pointer ${className}`}
-    >
+    <div ref={selectRef} className={`relative w-full ${className}`}>
       <div
-        className={`hover:border-blue/50 focus:border-blue focus:ring-blue/10 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-4 py-3 pr-10 text-[15px] text-gray-700 shadow-sm transition-all focus:shadow-lg focus:ring-4 focus:outline-none ${
+        className={`hover:border-blue/50 focus:border-blue focus:ring-blue/10 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-4 py-3 pr-20 text-[15px] shadow-sm transition-all focus:shadow-lg focus:ring-4 focus:outline-none ${
           isOpen ? "border-blue ring-blue/10 ring-4" : ""
-        }`}
+        } ${selectedOption ? "text-gray-700" : "text-gray-400"}`}
         onClick={() => setIsOpen(!isOpen)}
         role="button"
         tabIndex={0}
@@ -67,10 +64,35 @@ export default function CustomSelect({
           }
         }}
       >
-        <span className="block truncate">
+        <span className="block cursor-pointer truncate">
           {selectedOption ? selectedOption.label : placeholder}
         </span>
-        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center gap-1 pr-2">
+          {selectedOption && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onChange("");
+                setIsOpen(false);
+              }}
+              className="pointer-events-auto rounded-full p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+              aria-label="Clear selection"
+            >
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
           <svg
             className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
@@ -86,7 +108,7 @@ export default function CustomSelect({
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </span>
+        </div>
       </div>
 
       {/* Dropdown */}
