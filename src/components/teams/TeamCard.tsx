@@ -107,8 +107,14 @@ export default function TeamCard({ team }: TeamCardProps) {
         </ul>
       </div>
 
-      {/* Bottom accent line */}
-      <div className="from-blue via-yellow to-blue h-1.5 bg-gradient-to-r"></div>
+      {/* Bottom accent line with diagonal stripes */}
+      <div
+        className="h-1.5"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue) 33%, var(--color-yellow) 33%, var(--color-yellow) 66%, var(--color-red) 66%, var(--color-red) 100%)",
+        }}
+      ></div>
     </article>
   );
 }
