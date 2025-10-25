@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import clsx from "clsx";
 
 interface Option {
   value: string;
@@ -51,12 +52,13 @@ export default function CustomSelect({
   return (
     <div
       ref={selectRef}
-      className={`relative z-10 w-full cursor-pointer ${className}`}
+      className={clsx("relative z-10 w-full cursor-pointer", className)}
     >
       <div
-        className={`hover:border-blue/50 focus:border-blue focus:ring-blue/10 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-4 py-3 pr-10 text-[15px] text-gray-700 shadow-sm transition-all focus:shadow-lg focus:ring-4 focus:outline-none ${
-          isOpen ? "border-blue ring-blue/10 ring-4" : ""
-        }`}
+        className={clsx(
+          "hover:border-blue/50 focus:border-blue focus:ring-blue/10 w-full appearance-none rounded-xl border-2 border-gray-300 bg-white px-4 py-3 pr-10 text-[15px] text-gray-700 shadow-sm transition-all focus:shadow-lg focus:ring-4 focus:outline-none",
+          isOpen && "border-blue ring-blue/10 ring-4",
+        )}
         onClick={() => setIsOpen(!isOpen)}
         role="button"
         tabIndex={0}
@@ -72,9 +74,10 @@ export default function CustomSelect({
         </span>
         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
           <svg
-            className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
-              isOpen ? "rotate-180" : ""
-            }`}
+            className={clsx(
+              "h-5 w-5 text-gray-400 transition-transform duration-200",
+              isOpen && "rotate-180",
+            )}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -95,9 +98,10 @@ export default function CustomSelect({
           {options.map((option) => (
             <div
               key={option.value}
-              className={`relative cursor-pointer px-4 py-3 text-[15px] text-gray-700 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 focus:bg-gray-50 focus:outline-none ${
-                option.value === value ? "bg-blue/5 text-blue font-medium" : ""
-              }`}
+              className={clsx(
+                "relative cursor-pointer px-4 py-3 text-[15px] text-gray-700 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 focus:bg-gray-50 focus:outline-none",
+                option.value === value && "bg-blue/5 text-blue font-medium",
+              )}
               onClick={() => handleOptionClick(option)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
