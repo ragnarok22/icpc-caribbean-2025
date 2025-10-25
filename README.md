@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml)
 
-Official website the 2025 ICPC Caribbean Final (Cuban Site), hosted by Universidad de Holguín, Cuba. The ICPC is a prestigious regional programming competition that brings together the best teams from the Caribbean region to compete in algorithmic problem-solving.
+Official website the 2025 ICPC Caribbean Finals (Cuban Site), hosted by Universidad de Holguín, Cuba. The ICPC is a prestigious regional programming competition that brings together the best teams from the Caribbean region to compete in algorithmic problem-solving.
 
 ## 🛠️ Tech Stack
 
