@@ -78,30 +78,18 @@ export default function TeamCard({ team }: TeamCardProps) {
                   className={clsx(
                     "relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300",
                     isCoach
-<<<<<<< HEAD
                       ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-gradient-to-r"
                       : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-gradient-to-r",
                   )}
-=======
-                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-linear-to-r"
-                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-linear-to-r"
-                  }`}
->>>>>>> 0cbd2ed63eda18770351afc5e131765bae9f70ef
                 >
                   {/* Animated background shimmer */}
                   <div
                     className={clsx(
                       "absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full",
                       isCoach
-<<<<<<< HEAD
                         ? "via-yellow/10 bg-gradient-to-r from-transparent to-transparent"
                         : "via-blue/10 bg-gradient-to-r from-transparent to-transparent",
                     )}
-=======
-                        ? "via-yellow/10 bg-linear-to-r from-transparent to-transparent"
-                        : "via-blue/10 bg-linear-to-r from-transparent to-transparent"
-                    }`}
->>>>>>> 0cbd2ed63eda18770351afc5e131765bae9f70ef
                   ></div>
 
                   <div className="relative flex items-center justify-between">
@@ -110,16 +98,10 @@ export default function TeamCard({ team }: TeamCardProps) {
                     </span>
                     {/* Desktop: text, Mobile: icon */}
                     <span
-<<<<<<< HEAD
                       className={clsx(
                         "rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all",
                         isCoach ? "bg-yellow text-blue" : "bg-blue text-white",
                       )}
-=======
-                      className={`flex items-center justify-center rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all ${
-                        isCoach ? "bg-yellow text-blue" : "bg-blue text-white"
-                      }`}
->>>>>>> 0cbd2ed63eda18770351afc5e131765bae9f70ef
                     >
                       {/* Text visible only on md+ screens */}
                       <span className="hidden md:inline">

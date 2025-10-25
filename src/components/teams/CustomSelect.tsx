@@ -162,7 +162,7 @@ export default function CustomSelect({
             <div className="px-4 py-3 text-center text-gray-500">
               No hay opciones disponibles
             </div>
-          )    : (
+          ) : (
             options.map((option) => (
               <div
                 key={option.value}
