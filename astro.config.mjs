@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { fileURLToPath } from "node:url";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -14,6 +15,13 @@ export default defineConfig({
   site: "https://icpc-caribbean-2025.vercel.app",
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        picocolors: fileURLToPath(
+          new URL("./src/lib/picocolors-shim.js", import.meta.url),
+        ),
+      },
+    },
   },
 
   integrations: [react(), sitemap()],
