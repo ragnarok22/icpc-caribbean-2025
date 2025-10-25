@@ -2,14 +2,36 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import TeamListWithFilter from "@/components/teams/TeamListWithFilter";
-import { TEAMS } from "@/lib/data";
+import { getTeams, transformAPITeam } from "@/lib/api";
+
+// Fetch teams from API with maximum page size
+const response = await getTeams({ page_size: 100 });
+
+// Transform API data to internal format
+let teams = response.error ? [] : response.data.map(transformAPITeam);
+
+// If there are more pages, fetch all teams
+if (response.pagination.hasNextPage) {
+  let page = 2;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const nextResponse = await getTeams({ page, page_size: 100 });
+    if (nextResponse.error || nextResponse.data.length === 0) {
+      break;
+    }
+    teams = [...teams, ...nextResponse.data.map(transformAPITeam)];
+    hasNextPage = nextResponse.pagination.hasNextPage;
+    page++;
+  }
+}
 ---
 
 <Layout>
   <div
-    class="from-blue via-blue to-blue/90 relative bg-gradient-to-br text-white"
+    class="from-blue via-blue to-blue/90 relative bg-linear-to-br text-white"
   >
     <Header />
   </div>
-  <TeamListWithFilter client:load teams={TEAMS} />
+  <TeamListWithFilter client:load teams={teams} />
 </Layout>

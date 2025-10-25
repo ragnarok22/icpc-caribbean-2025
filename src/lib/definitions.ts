@@ -35,3 +35,59 @@ export type Social = {
     height: number;
   };
 };
+
+// API Response Types
+export type APIPagination = {
+  page: number;
+  pageSize: number;
+  hasNextPage: boolean;
+};
+
+export type APISponsor = {
+  name: string;
+  description: string;
+  category: string;
+  amount_donated: number;
+  image_url: string;
+};
+
+export type APISponsorsResponse = {
+  data: APISponsor[];
+  pagination: APIPagination;
+  error?: string;
+};
+
+export type APIContestant = {
+  name: string;
+  description: string;
+  is_coach: boolean;
+};
+
+export type APITeam = {
+  id: string;
+  name: string;
+  description: string;
+  university: string;
+  country: string;
+  image_url: string;
+  contestants: APIContestant[];
+};
+
+export type APITeamsResponse = {
+  data: APITeam[];
+  pagination: APIPagination;
+  error?: string;
+};
+
+export type GetSponsorsParams = {
+  page?: number;
+  page_size?: number;
+};
+
+export type GetTeamsParams = {
+  id?: string;
+  university_id?: string;
+  name?: string;
+  page?: number;
+  page_size?: number;
+};

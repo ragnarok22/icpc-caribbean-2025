@@ -12,9 +12,9 @@ export default function TeamListWithFilter({ teams }: TeamListWithFilterProps) {
   const [filteredTeams, setFilteredTeams] = useState<Team[]>(teams);
 
   return (
-    <div className="from-blue/5 min-h-screen bg-gradient-to-b via-white to-gray-50">
+    <div className="from-blue/5 min-h-screen bg-linear-to-b via-white to-gray-50">
       {/* Hero Section */}
-      <section className="from-blue via-blue to-blue/90 relative bg-gradient-to-br px-4 py-20 text-white">
+      <section className="from-blue via-blue to-blue/90 relative bg-linear-to-br px-4 py-20 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,193,7,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.05),transparent_50%)]"></div>
 

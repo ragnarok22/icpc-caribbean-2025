@@ -69,10 +69,35 @@ export default function CustomSelect({
           }
         }}
       >
-        <span className="block truncate">
+        <span className="block cursor-pointer truncate">
           {selectedOption ? selectedOption.label : placeholder}
         </span>
-        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center gap-1 pr-2">
+          {selectedOption && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onChange("");
+                setIsOpen(false);
+              }}
+              className="pointer-events-auto rounded-full p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+              aria-label="Clear selection"
+            >
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
           <svg
             className={clsx(
               "h-5 w-5 text-gray-400 transition-transform duration-200",
@@ -89,7 +114,7 @@ export default function CustomSelect({
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </span>
+        </div>
       </div>
 
       {/* Dropdown */}
@@ -133,6 +158,51 @@ export default function CustomSelect({
               <span className="block truncate">{option.label}</span>
             </div>
           ))}
+          {options.length === 0 ? (
+            <div className="px-4 py-3 text-center text-gray-500">
+              No hay opciones disponibles
+            </div>
+          )    : (
+            options.map((option) => (
+              <div
+                key={option.value}
+                className={`hover:bg-blue/10 focus:bg-blue/10 relative cursor-pointer px-4 py-3 text-[15px] transition-all duration-150 first:rounded-t-xl last:rounded-b-xl focus:outline-none ${
+                  option.value === value
+                    ? "bg-blue/10 text-blue font-semibold"
+                    : "text-gray-700"
+                }`}
+                onClick={() => handleOptionClick(option)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleOptionClick(option);
+                  }
+                }}
+                role="option"
+                tabIndex={0}
+                aria-selected={option.value === value}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="block flex-1 truncate">{option.label}</span>
+                  {option.value === value && (
+                    <svg
+                      className="text-blue h-5 w-5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       )}
     </div>
