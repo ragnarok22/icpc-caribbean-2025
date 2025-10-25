@@ -113,44 +113,52 @@ export default function CustomSelect({
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute top-full right-0 left-0 z-[9999] mt-1 max-h-60 overflow-auto rounded-xl border border-gray-200 bg-white shadow-lg">
-          {options.map((option) => (
-            <div
-              key={option.value}
-              className={`relative cursor-pointer px-4 py-3 text-[15px] text-gray-700 transition-all duration-200 first:rounded-t-xl last:rounded-b-xl hover:bg-gray-50 focus:bg-gray-50 focus:outline-none ${
-                option.value === value ? "bg-blue/5 text-blue font-medium" : ""
-              }`}
-              onClick={() => handleOptionClick(option)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  handleOptionClick(option);
-                }
-              }}
-              onMouseEnter={(e) => {
-                const indicator =
-                  e.currentTarget.querySelector(".hover-indicator");
-                if (indicator) {
-                  indicator.classList.remove("opacity-0");
-                  indicator.classList.add("opacity-100");
-                }
-              }}
-              onMouseLeave={(e) => {
-                const indicator =
-                  e.currentTarget.querySelector(".hover-indicator");
-                if (indicator) {
-                  indicator.classList.remove("opacity-100");
-                  indicator.classList.add("opacity-0");
-                }
-              }}
-              role="option"
-              tabIndex={0}
-              aria-selected={option.value === value}
-            >
-              <div className="hover-indicator opacity-0" />
-              <span className="block truncate">{option.label}</span>
+        <div className="absolute top-full right-0 left-0 z-50 mt-2 max-h-72 overflow-auto rounded-xl border-2 border-gray-200 bg-white shadow-2xl">
+          {options.length === 0 ? (
+            <div className="px-4 py-3 text-center text-gray-500">
+              No hay opciones disponibles
             </div>
-          ))}
+          ) : (
+            options.map((option) => (
+              <div
+                key={option.value}
+                className={`hover:bg-blue/10 focus:bg-blue/10 relative cursor-pointer px-4 py-3 text-[15px] transition-all duration-150 first:rounded-t-xl last:rounded-b-xl focus:outline-none ${
+                  option.value === value
+                    ? "bg-blue/10 text-blue font-semibold"
+                    : "text-gray-700"
+                }`}
+                onClick={() => handleOptionClick(option)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleOptionClick(option);
+                  }
+                }}
+                role="option"
+                tabIndex={0}
+                aria-selected={option.value === value}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="block flex-1 truncate">{option.label}</span>
+                  {option.value === value && (
+                    <svg
+                      className="text-blue h-5 w-5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       )}
     </div>
