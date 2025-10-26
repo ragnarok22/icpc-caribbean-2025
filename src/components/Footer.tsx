@@ -70,11 +70,9 @@ const Footer = () => {
   const footerRef = useRef(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.1 });
   const [isDesktop, setIsDesktop] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const isBrowser = typeof window !== "undefined";
 
   useEffect(() => {
-    setIsMounted(true);
-
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 640);
     };
@@ -99,7 +97,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             aria-label={social.name}
             className="hover:text-yellow text-white transition-all duration-300 hover:scale-110"
-            initial={{ opacity: 0, y: -20 }}
+            initial={isBrowser ? { opacity: 0, y: -20 } : false}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
           >
@@ -113,11 +111,11 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0, x: isMounted && isDesktop ? -50 : 0 }}
+          initial={isBrowser ? { opacity: 0, x: isDesktop ? -50 : 0 } : false}
           animate={
             isInView
               ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: isMounted && isDesktop ? -50 : 0 }
+              : { opacity: 0, x: isDesktop ? -50 : 0 }
           }
           transition={{ duration: 0.4, delay: 0.5 }}
         >
@@ -135,7 +133,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0 }}
+          initial={isBrowser ? { opacity: 0 } : false}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.4, delay: 0.6 }}
         >
@@ -153,11 +151,11 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0, x: isMounted && isDesktop ? 50 : 0 }}
+          initial={isBrowser ? { opacity: 0, x: isDesktop ? 50 : 0 } : false}
           animate={
             isInView
               ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: isMounted && isDesktop ? 50 : 0 }
+              : { opacity: 0, x: isDesktop ? 50 : 0 }
           }
           transition={{ duration: 0.4, delay: 0.7 }}
         >
@@ -175,7 +173,7 @@ const Footer = () => {
       </div>
       <motion.div
         className="w-full pb-12 text-center text-xs text-white"
-        initial={{ opacity: 0 }}
+        initial={isBrowser ? { opacity: 0 } : false}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
@@ -189,7 +187,7 @@ const Footer = () => {
         src={holguinFooter.src}
         alt="City Background"
         className="h-full w-full scale-150 object-cover object-center md:scale-100"
-        initial={{ opacity: 0, y: 20 }}
+        initial={isBrowser ? { opacity: 0, y: 20 } : false}
         animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       />
