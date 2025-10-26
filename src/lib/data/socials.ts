@@ -18,7 +18,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "instagram",
-    url: "https://www.instagram.com/icpccaribbeanmedia?igsh=MWY2YzJxOGs3ejQ0eQ==",
+    url: "https://www.instagram.com/icpccaribbeanmedia",
     image: {
       logo: Instagram,
       width: 200,
@@ -35,8 +35,17 @@ export const SOCIALS: Social[] = [
     },
   },
   {
+    name: "telegram",
+    url: "https://t.me/+08XS4hp5GZJhNGMx",
+    image: {
+      logo: Telegram,
+      width: 200,
+      height: 200,
+    },
+  },
+  {
     name: "x",
-    url: "https://x.com/icpc_caribbean?s=09",
+    url: "https://x.com/icpc_caribbean",
     image: {
       logo: X,
       width: 200,
