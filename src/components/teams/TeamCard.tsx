@@ -1,8 +1,6 @@
 import type { Team } from "@/lib/definitions";
 import { ParticipantType } from "@/lib/definitions";
-
-import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/info";
-import clsx from "clsx";
+import { DEFAULT_TEAM_PICTURE, DEFAULT_UNIVERSITY_LOGO } from "@/lib/data";
 
 interface TeamCardProps {
   team: Team;
@@ -75,21 +73,19 @@ export default function TeamCard({ team }: TeamCardProps) {
             return (
               <li key={index} className="group/item">
                 <div
-                  className={clsx(
-                    "relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300",
+                  className={`relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300 ${
                     isCoach
-                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-gradient-to-r"
-                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-gradient-to-r",
-                  )}
+                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-linear-to-r"
+                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-linear-to-r"
+                  }`}
                 >
                   {/* Animated background shimmer */}
                   <div
-                    className={clsx(
-                      "absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full",
+                    className={`absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full ${
                       isCoach
-                        ? "via-yellow/10 bg-gradient-to-r from-transparent to-transparent"
-                        : "via-blue/10 bg-gradient-to-r from-transparent to-transparent",
-                    )}
+                        ? "via-yellow/10 bg-linear-to-r from-transparent to-transparent"
+                        : "via-blue/10 bg-linear-to-r from-transparent to-transparent"
+                    }`}
                   ></div>
 
                   <div className="relative flex items-center justify-between">
@@ -98,10 +94,9 @@ export default function TeamCard({ team }: TeamCardProps) {
                     </span>
                     {/* Desktop: text, Mobile: icon */}
                     <span
-                      className={clsx(
-                        "rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all",
-                        isCoach ? "bg-yellow text-blue" : "bg-blue text-white",
-                      )}
+                      className={`flex items-center justify-center rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all ${
+                        isCoach ? "bg-yellow text-blue" : "bg-blue text-white"
+                      }`}
                     >
                       {/* Text visible only on md+ screens */}
                       <span className="hidden md:inline">
