@@ -26,7 +26,7 @@ export const SOCIALS: Social[] = [
     },
   },
   {
-    name: "telegram",
+    name: "telegram-channel",
     url: "https://t.me/icpccaribbeanmedia",
     image: {
       logo: Telegram,
@@ -35,7 +35,7 @@ export const SOCIALS: Social[] = [
     },
   },
   {
-    name: "telegram",
+    name: "telegram-group",
     url: "https://t.me/+08XS4hp5GZJhNGMx",
     image: {
       logo: Telegram,
