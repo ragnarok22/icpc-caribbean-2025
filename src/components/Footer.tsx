@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { JSX } from "react";
 import { SOCIALS } from "@/lib/data";
-import havanaFooter from "@/assets/havana-footer.png";
+import holguinFooter from "@/assets/holguin-footer.png";
 import icpcCaribeLogo from "@/assets/icpc-caribe-logo.png";
 import uhoLogo from "@/assets/UHo_logo.svg";
 
@@ -78,7 +78,7 @@ const Footer = () => {
       <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:mt-12 md:mb-8">
         {SOCIALS.map((social, index) => (
           <motion.a
-            key={social.name}
+            key={`social-${social.name}-${index}`}
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -163,7 +163,7 @@ const Footer = () => {
         </p>
       </motion.div>
       <motion.img
-        src={havanaFooter.src}
+        src={holguinFooter.src}
         alt="City Background"
         className="h-full w-full scale-150 object-cover object-center md:scale-100"
         initial={{ opacity: 0, y: 20 }}
