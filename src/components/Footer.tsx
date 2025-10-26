@@ -92,7 +92,7 @@ const Footer = () => {
           </motion.a>
         ))}
       </div>
-      <div className="mb-6 flex flex-col items-center justify-center gap-4 text-white sm:flex-row sm:gap-8 md:mb-8">
+      <div className="mx-auto mb-6 flex w-fit flex-col items-start justify-center gap-4 text-white sm:flex-row sm:gap-8 md:mb-8 md:items-center">
         <motion.a
           href="https://icpc.global"
           target="_blank"
