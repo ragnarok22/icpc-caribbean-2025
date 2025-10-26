@@ -11,7 +11,7 @@ import {
   type APITeam,
 } from "@/lib/definitions";
 
-const API_BASE_URL = "https://vtzdpirgvyrnpbqvkzbc.supabase.co/functions/v1";
+const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
 
 /**
  * Transform API sponsor to internal Sponsor format

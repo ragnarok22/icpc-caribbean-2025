@@ -9,9 +9,23 @@ Este documento explica cómo usar las funciones de integración con la API del I
 
 ## API Base URL
 
-```typescript
-https://vtzdpirgvyrnpbqvkzbc.supabase.co/functions/v1
+La URL base de la API se configura mediante la variable de entorno `PUBLIC_API_BASE_URL`:
+
+```bash
+PUBLIC_API_BASE_URL=https://api.example.com
 ```
+
+Para configurarla:
+
+1. Copia el archivo `.env.example` a `.env`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edita `.env` si necesitas cambiar la URL base de la API.
+
+**Nota:** Las variables de entorno que comienzan con `PUBLIC_` están disponibles tanto en el servidor como en el cliente en Astro.
 
 ## Funciones disponibles
 
