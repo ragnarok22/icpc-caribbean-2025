@@ -1,4 +1,4 @@
-# The 2025 ICPC Caribbean Final - Cuban Site
+# Final Caribeña 2025 del ICPC - Sede Cubana
 
 [![CI](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml/badge.svg)](https://github.com/ragnarok22/icpc-caribbean-2025/actions/workflows/ci.yml)
 
@@ -100,7 +100,7 @@ Preview the production build locally before deploying.
 
 ## 🎯 Features
 
-- **Event Information** - Comprehensive details about the ICPC Caribbean Finals 2025
+- **Event Information** - Comprehensive details about the Final Caribeña 2025 del ICPC
 - **Live Countdown** - Real-time countdown timer to the competition start
 - **Interactive Timeline** - Event schedule with detailed agenda
 - **Team Directory** - Searchable and filterable team listings with university information
@@ -144,7 +144,7 @@ For information about reporting security vulnerabilities, please see our [Securi
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-Copyright (C) 2025 ICPC Caribbean
+Copyright (C) 2025 Final Caribeña del ICPC
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

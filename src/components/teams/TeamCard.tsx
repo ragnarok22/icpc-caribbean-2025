@@ -8,10 +8,10 @@ interface TeamCardProps {
 
 export default function TeamCard({ team }: TeamCardProps) {
   return (
-    <article className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       {/* Gradient overlay on image */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 z-10 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
         <img
           src={team.picture || DEFAULT_TEAM_PICTURE}
           alt={team.teamName}
@@ -57,7 +57,7 @@ export default function TeamCard({ team }: TeamCardProps) {
       </div>
 
       {/* Participants section */}
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex items-center justify-between">
           <h4 className="text-sm font-bold tracking-wider text-gray-500 uppercase">
             Integrantes
@@ -75,16 +75,16 @@ export default function TeamCard({ team }: TeamCardProps) {
                 <div
                   className={`relative overflow-hidden rounded-xl border-2 px-4 py-3 transition-all duration-300 ${
                     isCoach
-                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-gradient-to-r"
-                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-gradient-to-r"
+                      ? "border-yellow/30 from-yellow/5 to-yellow/10 hover:border-yellow/60 hover:from-yellow/10 hover:to-yellow/20 bg-linear-to-r"
+                      : "border-blue/30 from-blue/5 to-blue/10 hover:border-blue/60 hover:from-blue/10 hover:to-blue/20 bg-linear-to-r"
                   }`}
                 >
                   {/* Animated background shimmer */}
                   <div
                     className={`absolute inset-0 -translate-x-full transition-transform duration-500 group-hover/item:translate-x-full ${
                       isCoach
-                        ? "via-yellow/10 bg-gradient-to-r from-transparent to-transparent"
-                        : "via-blue/10 bg-gradient-to-r from-transparent to-transparent"
+                        ? "via-yellow/10 bg-linear-to-r from-transparent to-transparent"
+                        : "via-blue/10 bg-linear-to-r from-transparent to-transparent"
                     }`}
                   ></div>
 
@@ -92,12 +92,40 @@ export default function TeamCard({ team }: TeamCardProps) {
                     <span className="font-medium text-gray-800">
                       {participant.name}
                     </span>
+                    {/* Desktop: text, Mobile: icon */}
                     <span
-                      className={`rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all ${
+                      className={`flex items-center justify-center rounded-lg px-3 py-1 text-xs font-bold tracking-wider uppercase shadow-sm transition-all ${
                         isCoach ? "bg-yellow text-blue" : "bg-blue text-white"
                       }`}
                     >
-                      {isCoach ? "Coach" : "Member"}
+                      {/* Text visible only on md+ screens */}
+                      <span className="hidden md:inline">
+                        {isCoach ? "Coach" : "Member"}
+                      </span>
+                      {/* Icon visible only on small screens */}
+                      {isCoach ? (
+                        <svg
+                          className="h-4 w-4 md:hidden"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-label="Coach"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="h-4 w-4 md:hidden"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          aria-label="Member"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
                     </span>
                   </div>
                 </div>
@@ -107,8 +135,14 @@ export default function TeamCard({ team }: TeamCardProps) {
         </ul>
       </div>
 
-      {/* Bottom accent line */}
-      <div className="from-blue via-yellow to-blue h-1.5 bg-gradient-to-r"></div>
+      {/* Bottom accent line with diagonal stripes */}
+      <div
+        className="h-1.5"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue) 33%, var(--color-yellow) 33%, var(--color-yellow) 66%, var(--color-red) 66%, var(--color-red) 100%)",
+        }}
+      ></div>
     </article>
   );
 }
