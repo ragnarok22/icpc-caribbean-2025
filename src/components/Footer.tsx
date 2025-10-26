@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import type { JSX } from "react";
 import { SOCIALS } from "@/lib/data";
 import holguinFooter from "@/assets/holguin-footer.png";
@@ -69,6 +69,21 @@ const SocialIcon = ({ name }: { name: string }) => {
 const Footer = () => {
   const footerRef = useRef(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.1 });
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 640);
+    };
+
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   return (
     <footer
@@ -98,9 +113,13 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          initial={{ opacity: 0, x: isMounted && isDesktop ? -50 : 0 }}
+          animate={
+            isInView
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: isMounted && isDesktop ? -50 : 0 }
+          }
+          transition={{ duration: 0.4, delay: 0.5 }}
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white p-2.5 shadow-md transition-shadow group-hover:shadow-lg sm:h-10 sm:w-10 sm:p-2">
             <img
@@ -116,9 +135,9 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0, x: 20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.4, delay: 0.6 }}
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white p-2.5 shadow-md transition-shadow group-hover:shadow-lg sm:h-10 sm:w-10 sm:p-2">
             <img
@@ -134,9 +153,13 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 transition-transform hover:scale-105"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          initial={{ opacity: 0, x: isMounted && isDesktop ? 50 : 0 }}
+          animate={
+            isInView
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: isMounted && isDesktop ? 50 : 0 }
+          }
+          transition={{ duration: 0.4, delay: 0.7 }}
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white p-2.5 shadow-md transition-shadow group-hover:shadow-lg sm:h-10 sm:w-10 sm:p-2">
             <img
