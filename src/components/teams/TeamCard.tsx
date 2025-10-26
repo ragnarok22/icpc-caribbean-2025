@@ -32,11 +32,11 @@ export default function TeamCard({ team }: TeamCardProps) {
                 />
               </div>
             </div>
-            <div className="flex-1">
-              <h3 className="mb-1 text-2xl leading-tight font-bold text-white drop-shadow-lg">
+            <div className="min-w-0 flex-1">
+              <h3 className="mb-1 truncate text-2xl leading-tight font-bold text-white drop-shadow-lg">
                 {team.teamName}
               </h3>
-              <p className="text-sm font-medium text-white/90 drop-shadow-md">
+              <p className="truncate text-sm font-medium text-white/90 drop-shadow-md">
                 {team.university.name}
               </p>
             </div>
