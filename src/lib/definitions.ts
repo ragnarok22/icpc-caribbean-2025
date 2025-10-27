@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export type University = {
   name: string;
   logo: string;
@@ -34,13 +36,6 @@ export type Social = {
     width: number;
     height: number;
   };
-};
-
-type ImageMetadata = {
-  src: string;
-  width: number;
-  height: number;
-  format: string;
 };
 
 // API Response Types
