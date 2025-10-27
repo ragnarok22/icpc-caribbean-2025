@@ -10,6 +10,7 @@ import {
   type APISponsor,
   type APITeam,
 } from "@/lib/definitions";
+import { DEFAULT_UNIVERSITY_LOGO } from "@/lib/data";
 
 const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
 
@@ -39,7 +40,7 @@ export function transformAPITeam(apiTeam: APITeam): Team {
     participants,
     university: {
       name: apiTeam.university,
-      logo: "", // University logo not provided by API
+      logo: apiTeam.university_image || DEFAULT_UNIVERSITY_LOGO,
     },
   };
 }

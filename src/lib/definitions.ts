@@ -68,6 +68,7 @@ export type APITeam = {
   name: string;
   description: string;
   university: string;
+  university_image: string;
   country: string;
   image_url: string;
   contestants: APIContestant[];
