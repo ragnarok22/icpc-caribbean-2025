@@ -26,24 +26,6 @@ export const SOCIALS: Social[] = [
     },
   },
   {
-    name: "telegram",
-    url: "https://t.me/icpccaribbeanmedia",
-    image: {
-      logo: Telegram,
-      width: 200,
-      height: 200,
-    },
-  },
-  {
-    name: "telegram",
-    url: "https://t.me/+08XS4hp5GZJhNGMx",
-    image: {
-      logo: Telegram,
-      width: 200,
-      height: 200,
-    },
-  },
-  {
     name: "x",
     url: "https://x.com/icpc_caribbean",
     image: {
@@ -57,6 +39,24 @@ export const SOCIALS: Social[] = [
     url: "https://www.youtube.com/@CaribbeanMedia",
     image: {
       logo: Youtube,
+      width: 200,
+      height: 200,
+    },
+  },
+  {
+    name: "telegram",
+    url: "https://t.me/icpccaribbeanmedia",
+    image: {
+      logo: Telegram,
+      width: 200,
+      height: 200,
+    },
+  },
+  {
+    name: "telegram",
+    url: "https://t.me/+08XS4hp5GZJhNGMx",
+    image: {
+      logo: Telegram,
       width: 200,
       height: 200,
     },
