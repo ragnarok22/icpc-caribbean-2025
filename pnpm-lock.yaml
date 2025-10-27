@@ -56,6 +56,9 @@ importers:
       "@eslint/js":
         specifier: ^9.38.0
         version: 9.38.0
+      "@types/eslint-plugin-jsx-a11y":
+        specifier: ^6.10.1
+        version: 6.10.1(jiti@2.6.1)
       eslint:
         specifier: ^9.38.0
         version: 9.38.0(jiti@2.6.1)
@@ -1405,6 +1408,12 @@ packages:
     resolution:
       {
         integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==,
+      }
+
+  "@types/eslint-plugin-jsx-a11y@6.10.1":
+    resolution:
+      {
+        integrity: sha512-5RtuPVe0xz8BAhrkn2oww6Uw885atf962Q4fqZo48QdO3EQA7oCEDSXa6optgJ1ZMds3HD9ITK5bfm4AWuoXFQ==,
       }
 
   "@types/estree@1.0.8":
@@ -6616,6 +6625,13 @@ snapshots:
   "@types/debug@4.1.12":
     dependencies:
       "@types/ms": 2.1.0
+
+  "@types/eslint-plugin-jsx-a11y@6.10.1(jiti@2.6.1)":
+    dependencies:
+      eslint: 9.38.0(jiti@2.6.1)
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
 
   "@types/estree@1.0.8": {}
 

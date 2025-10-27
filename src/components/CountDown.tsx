@@ -55,10 +55,12 @@ const TimeUnit = ({ value, label }: { value: number; label: string }) => {
   return (
     <div className="flex flex-col items-center">
       <div
-        style={{
-          fontVariantNumeric: "tabular-nums",
-          "--number-flow-char-height": "0.85em",
-        }}
+        style={
+          {
+            fontVariantNumeric: "tabular-nums",
+            "--number-flow-char-height": "0.85em",
+          } as React.CSSProperties
+        }
         className="font-mono text-5xl font-bold md:text-7xl"
       >
         <NumberFlow

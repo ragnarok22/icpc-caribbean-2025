@@ -30,10 +30,17 @@ export type Social = {
   name: "instagram" | "telegram" | "youtube" | "facebook" | "x";
   url: string;
   image: {
-    logo: string;
+    logo: ImageMetadata;
     width: number;
     height: number;
   };
+};
+
+type ImageMetadata = {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
 };
 
 // API Response Types
