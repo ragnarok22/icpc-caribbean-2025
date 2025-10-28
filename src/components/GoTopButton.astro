@@ -25,11 +25,15 @@
 
 <script>
   const button = document.getElementById("go-to-top");
-
+  const SCROLL_THRESHOLD = 300;
+  const WIDTH_THRESHOLD = 900;
   if (button) {
     // Muestra el botón solo cuando el usuario ha bajado un poco
     const toggleVisibility = () => {
-      if (window.scrollY > 300 && window.innerWidth < 900) {
+      if (
+        window.scrollY > SCROLL_THRESHOLD &&
+        window.innerWidth < WIDTH_THRESHOLD
+      ) {
         button.style.display = "flex";
       } else {
         button.style.display = "none";
