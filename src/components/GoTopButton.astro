@@ -1,0 +1,46 @@
+---
+
+---
+
+<button
+  id="go-to-top"
+  class="fixed right-8 bottom-8 z-50 rounded-full bg-blue-600 p-3 text-white shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none active:scale-95 active:shadow-inner"
+  aria-label="Volver arriba"
+  onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2.5"
+    stroke="currentColor"
+    class="h-6 w-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+  </svg>
+</button>
+
+<script>
+  const button = document.getElementById("go-to-top");
+  const SCROLL_THRESHOLD = 300;
+  const WIDTH_THRESHOLD = 900;
+  if (button) {
+    // Muestra el botón solo cuando el usuario ha bajado un poco
+    const toggleVisibility = () => {
+      if (
+        window.scrollY > SCROLL_THRESHOLD &&
+        window.innerWidth < WIDTH_THRESHOLD
+      ) {
+        button.style.display = "flex";
+      } else {
+        button.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    toggleVisibility();
+  }
+</script>
