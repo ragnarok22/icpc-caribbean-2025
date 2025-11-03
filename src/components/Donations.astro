@@ -57,7 +57,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
 
     <div class="grid gap-6 lg:grid-cols-2">
       <article
-        class="rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm"
+        class="group rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15"
       >
         <h3 class="text-lg font-semibold text-white">
           Donaciones monetarias nacionales
@@ -68,7 +68,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
         </p>
         <ul class="mt-4 space-y-3 text-sm text-white/80">
           <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <span class="font-medium text-white/90">Contacto:</span>
@@ -87,7 +87,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
             </button>
           </li>
           <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <span class="font-medium text-white/90">Tarjeta CUP:</span>
@@ -104,7 +104,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
             </button>
           </li>
           <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <span class="font-medium text-white/90">Tarjeta MLC:</span>
@@ -124,7 +124,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
       </article>
 
       <article
-        class="rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm"
+        class="group rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15"
       >
         <h3 class="text-lg font-semibold text-white">Criptomonedas</h3>
         <p class="mt-2 text-sm text-white/80">
@@ -133,7 +133,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
         </p>
         <ul class="mt-4 space-y-3 text-sm text-white/80">
           <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <span class="font-medium text-white/90"
@@ -152,7 +152,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
             </button>
           </li>
           <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
           >
             <div>
               <span class="font-medium text-white/90">Soporte opcional:</span>
