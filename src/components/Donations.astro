@@ -66,18 +66,59 @@ const formattedTotal = usdFormatter.format(totalAmount);
           Transferencias bancarias o donaciones en efectivo en cualquier moneda
           con curso legal en Cuba.
         </p>
-        <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>
-            <span class="font-medium text-white/90">Contacto:</span> +53 52465767
-            (Yisel Clavel, Directora ICPC Cuba)
+        <ul class="mt-4 space-y-3 text-sm text-white/80">
+          <li
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span class="font-medium text-white/90">Contacto:</span>
+              <span class="ml-1"
+                >+53 52465767 (Yisel Clavel, Directora ICPC Cuba)</span
+              >
+            </div>
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              data-copy="+5352465767"
+              data-original-label="Copiar"
+              aria-label="Copiar contacto de Yisel Clavel"
+            >
+              Copiar
+            </button>
           </li>
-          <li>
-            <span class="font-medium text-white/90">Tarjeta CUP:</span> 9204 0699
-            9334 6196
+          <li
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span class="font-medium text-white/90">Tarjeta CUP:</span>
+              <span class="ml-1 font-mono text-sm">9204 0699 9334 6196</span>
+            </div>
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              data-copy="9204069993346196"
+              data-original-label="Copiar"
+              aria-label="Copiar tarjeta CUP"
+            >
+              Copiar
+            </button>
           </li>
-          <li>
-            <span class="font-medium text-white/90">Tarjeta MLC:</span> 9235 0699
-            9592 1551
+          <li
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span class="font-medium text-white/90">Tarjeta MLC:</span>
+              <span class="ml-1 font-mono text-sm">9235 0699 9592 1551</span>
+            </div>
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              data-copy="9235069995921551"
+              data-original-label="Copiar"
+              aria-label="Copiar tarjeta MLC"
+            >
+              Copiar
+            </button>
           </li>
         </ul>
       </article>
@@ -90,15 +131,42 @@ const formattedTotal = usdFormatter.format(totalAmount);
           Coordinamos un enlace de pago según la moneda y el monto. Escríbenos
           para acompañarte en el proceso.
         </p>
-        <ul class="mt-4 space-y-2 text-sm text-white/80">
-          <li>
-            <span class="font-medium text-white/90"
-              >Atención personalizada:</span
-            > +53 52465767 (Yisel)
+        <ul class="mt-4 space-y-3 text-sm text-white/80">
+          <li
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span class="font-medium text-white/90"
+                >Atención personalizada:</span
+              >
+              <span class="ml-1">+53 52465767 (Yisel)</span>
+            </div>
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              data-copy="+5352465767"
+              data-original-label="Copiar"
+              aria-label="Copiar contacto de Yisel"
+            >
+              Copiar
+            </button>
           </li>
-          <li>
-            <span class="font-medium text-white/90">Soporte opcional:</span> +53
-            51578493 (Guillermo, solo WhatsApp)
+          <li
+            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span class="font-medium text-white/90">Soporte opcional:</span>
+              <span class="ml-1">+53 51578493 (Guillermo, solo WhatsApp)</span>
+            </div>
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              data-copy="+5351578493"
+              data-original-label="Copiar"
+              aria-label="Copiar contacto de Guillermo"
+            >
+              Copiar
+            </button>
           </li>
         </ul>
       </article>
@@ -154,3 +222,56 @@ const formattedTotal = usdFormatter.format(totalAmount);
     </div>
   </div>
 </section>
+
+<script>
+  if (typeof window !== "undefined") {
+    const buttons = document.querySelectorAll("[data-copy]");
+
+    const copyToClipboard = async (text) => {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.setAttribute("readonly", "");
+      textArea.style.position = "fixed";
+      textArea.style.top = "-1000px";
+      textArea.style.left = "-1000px";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+    };
+
+    buttons.forEach((button) => {
+      const originalLabel =
+        button.getAttribute("data-original-label") ||
+        button.textContent ||
+        "Copiar";
+      button.addEventListener("click", async () => {
+        const text = button.getAttribute("data-copy");
+        if (!text) return;
+
+        try {
+          await copyToClipboard(text);
+          button.textContent = "Copiado";
+          button.classList.add("bg-white/20");
+          setTimeout(() => {
+            button.textContent = originalLabel.trim();
+            button.classList.remove("bg-white/20");
+          }, 2000);
+        } catch (error) {
+          console.error("Error al copiar al portapapeles:", error);
+          button.textContent = "Error";
+          setTimeout(() => {
+            button.textContent = originalLabel.trim();
+            button.classList.remove("bg-white/20");
+          }, 2000);
+        }
+      });
+    });
+  }
+</script>
