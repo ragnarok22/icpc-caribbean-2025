@@ -1,5 +1,6 @@
 ---
 import { getSponsors } from "@/lib/api";
+import { DONATION_CARDS } from "@/lib/data";
 
 const response = await getSponsors({ page_size: 100 });
 const sponsors = response.error ? [] : response.data;
@@ -56,120 +57,48 @@ const formattedTotal = usdFormatter.format(totalAmount);
     </header>
 
     <div class="grid gap-6 lg:grid-cols-2">
-      <article
-        class="group rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15"
-      >
-        <h3 class="text-lg font-semibold text-white">
-          Donaciones monetarias nacionales
-        </h3>
-        <p class="mt-2 text-sm text-white/80">
-          Transferencias bancarias o donaciones en efectivo en cualquier moneda
-          con curso legal en Cuba.
-        </p>
-        <ul class="mt-4 space-y-3 text-sm text-white/80">
-          <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
+      {
+        DONATION_CARDS.map((card) => (
+          <article
+            class="group rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15"
+            id={`donation-${card.id}`}
           >
-            <div>
-              <span class="font-medium text-white/90">Contacto:</span>
-              <span class="ml-1"
-                >+53 52465767 (Yisel Clavel, Directora ICPC Cuba)</span
-              >
-            </div>
-            <button
-              type="button"
-              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              data-copy="+5352465767"
-              data-original-label="Copiar"
-              aria-label="Copiar contacto de Yisel Clavel"
-            >
-              Copiar
-            </button>
-          </li>
-          <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span class="font-medium text-white/90">Tarjeta CUP:</span>
-              <span class="ml-1 font-mono text-sm">9204 0699 9334 6196</span>
-            </div>
-            <button
-              type="button"
-              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              data-copy="9204069993346196"
-              data-original-label="Copiar"
-              aria-label="Copiar tarjeta CUP"
-            >
-              Copiar
-            </button>
-          </li>
-          <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span class="font-medium text-white/90">Tarjeta MLC:</span>
-              <span class="ml-1 font-mono text-sm">9235 0699 9592 1551</span>
-            </div>
-            <button
-              type="button"
-              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              data-copy="9235069995921551"
-              data-original-label="Copiar"
-              aria-label="Copiar tarjeta MLC"
-            >
-              Copiar
-            </button>
-          </li>
-        </ul>
-      </article>
+            <h3 class="text-lg font-semibold text-white">{card.title}</h3>
+            <p class="mt-2 text-sm text-white/80">{card.description}</p>
 
-      <article
-        class="group rounded-xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:bg-white/15"
-      >
-        <h3 class="text-lg font-semibold text-white">Criptomonedas</h3>
-        <p class="mt-2 text-sm text-white/80">
-          Coordinamos un enlace de pago según la moneda y el monto. Escríbenos
-          para acompañarte en el proceso.
-        </p>
-        <ul class="mt-4 space-y-3 text-sm text-white/80">
-          <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span class="font-medium text-white/90"
-                >Atención personalizada:</span
-              >
-              <span class="ml-1">+53 52465767 (Yisel)</span>
-            </div>
-            <button
-              type="button"
-              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              data-copy="+5352465767"
-              data-original-label="Copiar"
-              aria-label="Copiar contacto de Yisel"
-            >
-              Copiar
-            </button>
-          </li>
-          <li
-            class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <span class="font-medium text-white/90">Soporte opcional:</span>
-              <span class="ml-1">+53 51578493 (Guillermo, solo WhatsApp)</span>
-            </div>
-            <button
-              type="button"
-              class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              data-copy="+5351578493"
-              data-original-label="Copiar"
-              aria-label="Copiar contacto de Guillermo"
-            >
-              Copiar
-            </button>
-          </li>
-        </ul>
-      </article>
+            <ul class="mt-4 space-y-3 text-sm text-white/80">
+              {card.entries.map((entry) => {
+                const valueClasses = [
+                  "ml-1",
+                  entry.isMonospace ? "font-mono text-sm" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ");
+
+                return (
+                  <li class="flex flex-col gap-2 rounded-lg bg-white/5 p-4 transition-colors duration-300 group-hover:bg-white/10 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <span class="font-medium text-white/90">
+                        {entry.label}:
+                      </span>
+                      <span class={valueClasses}>{entry.display}</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      data-copy={entry.copy}
+                      data-original-label="Copiar"
+                      aria-label={entry.ariaLabel}
+                    >
+                      Copiar
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </article>
+        ))
+      }
     </div>
 
     <div

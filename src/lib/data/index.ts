@@ -1,5 +1,6 @@
 export { SCHEDULE } from "./schedule";
 export { SOCIALS } from "./socials";
+export { DONATION_CARDS } from "./donations";
 
 export const EVENT_DATE = new Date("2025-11-08T09:00:00-05:00");
 
