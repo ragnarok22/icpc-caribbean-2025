@@ -14,14 +14,14 @@
     "check": "pnpm format:check && pnpm lint"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/react": "^4.4.1",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^9.0.0",
     "@number-flow/react": "^0.5.10",
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "astro": "^5.15.1",
+    "astro": "^5.15.3",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "react": "^19.2.0",
@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
-    "@eslint/js": "^9.38.0",
+    "@eslint/js": "^9.39.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
