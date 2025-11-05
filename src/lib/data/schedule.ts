@@ -1,13 +1,17 @@
 export const SCHEDULE = [
   {
-    date: "2025-11-06T12:00:00",
+    date: "2025-11-06T20:00:00",
     description:
       "Recibimiento, orientación, cena, inscripción oficial y XI Torneo Caribeño de Ajedrez (ICPChess).",
   },
   {
     date: "2025-11-07T12:00:00",
     description:
-      "Ceremonia de inauguración, talleres, exposición de patrocinadores, concurso de práctica, torneos y actividades culturales.",
+      "Ceremonia de inauguración, talleres, exposición de patrocinadores, torneos y actividades culturales.",
+  },
+  {
+    date: "2025-11-08T09:00:00",
+    description: "Concurso de práctica.",
   },
   {
     date: "2025-11-08T12:00:00",
