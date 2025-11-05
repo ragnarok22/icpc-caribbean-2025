@@ -1,43 +1,31 @@
 ---
-import { getSponsors } from "@/lib/api";
 import { DONATION_CARDS } from "@/lib/data";
 
-const response = await getSponsors({ page_size: 100 });
-const sponsors = response.error ? [] : response.data;
+// Montos reales de donaciones (no confundir con patrocinios)
+const DONATION_AMOUNTS = {
+  usd: 32.6,
+  cup: 2150,
+};
+
+// Usar formato de fecha simple para evitar problemas de zona horaria
+const formattedDeadline = "5 de noviembre de 2025";
 
 const usdFormatter = new Intl.NumberFormat("es-ES", {
   style: "currency",
   currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+const cupFormatter = new Intl.NumberFormat("es-ES", {
+  style: "currency",
+  currency: "CUP",
+  minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
 
-const totalAmount = sponsors.reduce(
-  (sum, sponsor) =>
-    sum +
-    (Number.isFinite(sponsor.amount_donated) ? sponsor.amount_donated : 0),
-  0,
-);
-
-const totalsByCategory = sponsors.reduce((acc, sponsor) => {
-  const category = sponsor.category?.trim() || "Otras vías";
-  const currentAmount = acc.get(category) ?? 0;
-  const amount = Number.isFinite(sponsor.amount_donated)
-    ? sponsor.amount_donated
-    : 0;
-
-  acc.set(category, currentAmount + amount);
-  return acc;
-}, new Map<string, number>());
-
-const categoryBreakdown = Array.from(totalsByCategory.entries())
-  .map(([category, amount]) => ({
-    category,
-    amount,
-    formattedAmount: usdFormatter.format(amount),
-  }))
-  .sort((a, b) => b.amount - a.amount);
-
-const formattedTotal = usdFormatter.format(totalAmount);
+const formattedUSD = usdFormatter.format(DONATION_AMOUNTS.usd);
+const formattedCUP = cupFormatter.format(DONATION_AMOUNTS.cup);
 ---
 
 <section class="bg-blue py-16 text-white" id="donaciones">
@@ -85,7 +73,7 @@ const formattedTotal = usdFormatter.format(totalAmount);
                     </div>
                     <button
                       type="button"
-                      class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      class="inline-flex items-center justify-center rounded-md border border-white/30 px-3 py-1 text-xs font-semibold tracking-wide text-white/90 uppercase transition hover:bg-white/20 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white"
                       data-copy={entry.copy}
                       data-original-label="Copiar"
                       aria-label={entry.ariaLabel}
@@ -108,44 +96,33 @@ const formattedTotal = usdFormatter.format(totalAmount);
         Impacto de las donaciones
       </h3>
       <p class="mt-2 text-sm text-white/80">
-        Gracias al apoyo de patrocinadores y personas solidarias, hemos reunido
-        recursos que nos permiten planificar la participación de la delegación
-        caribeña.
+        Gracias al apoyo de personas solidarias, hemos recibido donaciones que
+        nos permiten planificar la participación de la delegación caribeña. Las
+        donaciones son independientes de los patrocinios oficiales.
       </p>
 
-      <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+      <dl class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-lg bg-white/10 p-4 shadow-sm">
-          <dt class="text-sm font-medium text-white/70">
-            Monto acumulado hasta la fecha
-          </dt>
+          <dt class="text-sm font-medium text-white/70">Donaciones en USD</dt>
           <dd class="mt-1 text-2xl font-semibold text-white">
-            {formattedTotal}
+            {formattedUSD}
+          </dd>
+        </div>
+
+        <div class="rounded-lg bg-white/10 p-4 shadow-sm">
+          <dt class="text-sm font-medium text-white/70">Donaciones en CUP</dt>
+          <dd class="mt-1 text-2xl font-semibold text-white">
+            {formattedCUP}
           </dd>
         </div>
 
         <div class="rounded-lg bg-white/10 p-4 shadow-sm">
           <dt class="text-sm font-medium text-white/70">
-            Vías que han aportado
+            Fecha límite de donación
           </dt>
-          {
-            categoryBreakdown.length > 0 ? (
-              <ul class="mt-1 space-y-1 text-sm text-white/80">
-                {categoryBreakdown.map(({ category, formattedAmount }) => (
-                  <li class="flex items-center justify-between">
-                    <span>{category}</span>
-                    <span class="font-semibold text-white/90">
-                      {formattedAmount}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <dd class="mt-1 text-base text-white/80">
-                En proceso de actualización. Pronto compartiremos el detalle de
-                las contribuciones.
-              </dd>
-            )
-          }
+          <dd class="mt-1 text-lg font-semibold text-white">
+            {formattedDeadline}
+          </dd>
         </div>
       </dl>
     </div>
