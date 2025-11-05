@@ -10,7 +10,6 @@ export const SCHEDULE = [
   },
   {
     date: "2025-11-08T12:00:00",
-    description:
-      "Concurso oficial (12pm - 5pm).",
+    description: "Concurso oficial (12pm - 5pm).",
   },
 ];
