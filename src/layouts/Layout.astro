@@ -16,7 +16,7 @@ const {
   canonical = Astro.url.pathname,
 } = Astro.props;
 
-const siteUrl = Astro.site || "https://icpc-caribbean-2025.vercel.app";
+const siteUrl = Astro.site || "https://2025icpccaribbeanfinalscuba.vercel.app";
 const canonicalURL = new URL(canonical, siteUrl).href;
 const imageURL = new URL(image, siteUrl).href;
 ---
@@ -53,7 +53,10 @@ const imageURL = new URL(image, siteUrl).href;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageURL} />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="ICPC Final Caribeña 2025" />
+    <meta
+      property="og:site_name"
+      content="ICPC Caribbean Finals - Cuban Site"
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -78,10 +81,10 @@ const imageURL = new URL(image, siteUrl).href;
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Event",
-        name: "ICPC Final Caribeña 2025",
+        name: "ICPC Caribbean Finals - Cuban Site",
         description: description,
-        startDate: "2025-10-25",
-        endDate: "2025-10-26",
+        startDate: "2025-11-06",
+        endDate: "2025-11-08",
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         location: {
