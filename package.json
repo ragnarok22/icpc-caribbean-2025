@@ -14,23 +14,23 @@
     "check": "pnpm format:check && pnpm lint"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.1",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/vercel": "^9.0.0",
+    "@astrojs/vercel": "^9.0.2",
     "@number-flow/react": "^0.5.10",
-    "@tailwindcss/vite": "^4.1.16",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "astro": "^5.15.9",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.4",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.24",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.16"
+    "framer-motion": "^12.23.25",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.5",
+    "@astrojs/check": "^0.9.6",
     "@eslint/js": "^9.39.1",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "eslint": "^9.39.1",
@@ -39,11 +39,11 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "prettier": "3.6.2",
+    "prettier": "3.7.4",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.3"
+    "typescript-eslint": "^8.48.1"
   },
   "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8"
 }
