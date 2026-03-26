@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/react": "^5.0.0",
     "@astrojs/sitemap": "^3.7.1",
-    "@astrojs/vercel": "^10.0.0",
+    "@astrojs/vercel": "^10.0.2",
     "@number-flow/react": "^0.5.14",
     "@tailwindcss/vite": "^4.2.1",
     "@types/react": "^19.2.14",
